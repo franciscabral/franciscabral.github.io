@@ -21,13 +21,13 @@ function setup() {
     //frameRate(24)
 }
 
-function mousePressed(){
+function mousePressed() {
     init();
 }
 
 function keyPressed() {
-    if (!isNaN(key)){
-        init(key-1)
+    if (!isNaN(key)) {
+        init(key - 1)
     }
 }
 
@@ -36,12 +36,12 @@ function init(imgIndex) {
     var rows = floor(height / tileSize);
     //var imgIndex = window.location.href.split("?")[1];
     if (imgs)
-    for (let x = 0; x < cols; x++) {
-        matrix[x] = [];
-        for (let y = 0; y < rows; y++) {
-            matrix[x].push(isNaN(imgIndex) && random(1) > 0.50);
+        for (let x = 0; x < cols; x++) {
+            matrix[x] = [];
+            for (let y = 0; y < rows; y++) {
+                matrix[x].push(isNaN(imgIndex) && random(1) > 0.50);
+            }
         }
-    }
     if (!isNaN(imgIndex))
         drawOnMatrix(imageToMatrix(imgs[imgIndex]), floor(cols / 3), floor(rows / 3));
     generation = 1;
@@ -144,8 +144,3 @@ function imageToMatrix(img) {
         return getPixel(imgData, y * imgData.width + x);
     }
 }
-
-
-Number.prototype.mod = function (n) {
-    return ((this % n) + n) % n;
-};

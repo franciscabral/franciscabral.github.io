@@ -43,7 +43,7 @@ function keyPressed() {
         s.dir(0, 1);
     } else if (keyCode == RIGHT_ARROW && (s.xspeed != -1 || s.tail.length == 0)) {
         s.dir(1, 0);
-    } else if (keyCode == LEFT_ARROW  && (s.xspeed != 1 || s.tail.length == 0)) {
+    } else if (keyCode == LEFT_ARROW && (s.xspeed != 1 || s.tail.length == 0)) {
         s.dir(-1, 0);
     }
 }
@@ -96,7 +96,7 @@ function Snake() {
         this.x = this.x + this.xspeed * scl;
         this.y = this.y + this.yspeed * scl;
 
-        if (this.x+scl > width) {
+        if (this.x + scl > width) {
             this.x = 0;
         }
 
@@ -104,12 +104,12 @@ function Snake() {
             this.x = width - scl
         }
 
-        if (this.y+scl > height) {
+        if (this.y + scl > height) {
             this.y = 0;
         }
 
-        if (this.y < 0){
-            this.y = width-scl;
+        if (this.y < 0) {
+            this.y = width - scl;
         }
 
         //this.x = this.x.mod(rows)// constrain(this.x, 0, width - scl);
