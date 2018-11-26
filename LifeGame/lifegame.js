@@ -144,3 +144,7 @@ function imageToMatrix(img) {
         return getPixel(imgData, y * imgData.width + x);
     }
 }
+
+Number.prototype.mod = function (n) {
+    return ((this % n) + n) % n;
+};
