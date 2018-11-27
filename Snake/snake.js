@@ -15,7 +15,6 @@ function setup() {
     pickLocation()
 }
 
-
 function pickLocation() {
     food = createVector(floor(random(cols)), floor(random(rows)))
     food.mult(scl);
