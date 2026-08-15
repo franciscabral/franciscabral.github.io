@@ -233,8 +233,9 @@
           </p>
           <p>
             What came after was less romantic and more useful. Networks and machines kept
-            alive in a college lab, then enterprise networks where the racks ran Solaris as
-            often as Linux or Windows. ERP posting routines, where a bug and a misstated ledger
+            alive in a college lab, then years of advanced network engineering at Siemens,
+            where the racks ran Solaris and a link flapping at three in the morning was
+            somebody's outage by nine. ERP posting routines, where a bug and a misstated ledger
             are the same event. Branch rollouts across a retail bank, where the deadline is
             Monday morning and there is no version of done that skips the branch in the
             middle of nowhere.
@@ -296,7 +297,7 @@
     <section id="museum">
       <div class="wrap">
         <p class="eyebrow eyebrow--violet">Time travel</p>
-        <h2>Thirteen screens, twenty-odd years.</h2>
+        <h2>Fourteen screens, twenty-odd years.</h2>
         <p class="lede">
           The tools changed, the job mostly didn't: make the thing work, on time, for
           people who are waiting. Scroll sideways and watch the chrome catch up.
@@ -349,14 +350,14 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
 <span class="c">REM  36 machines. Class starts at 08:00.</span></code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 02 · 2005–08</p>
+              <p class="plaque__no">Exhibit 02 · circa 2005</p>
               <h3>Keeping the lab alive</h3>
               <p>
-                Networks, hardware, disk images — first a college's machines, then
-                enterprise racks running Solaris. Unglamorous, and the fastest education in
-                how systems actually fail that money can't buy.
+                Networks, hardware, disk images, thirty-six machines and a class starting
+                at eight. Unglamorous, and the fastest education in how systems actually
+                fail that money can't buy.
               </p>
-              <ul class="plaque__tech"><li>Solaris</li><li>Batch</li><li>Ghost</li><li>TCP/IP</li><li>Windows Server</li></ul>
+              <ul class="plaque__tech"><li>Batch</li><li>Ghost</li><li>TCP/IP</li><li>Windows Server</li></ul>
               <p class="plaque__recon">reconstruction</p>
             </div>
           </article>
@@ -413,6 +414,35 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
             </div>
           </article>
 
+          <!-- 03c · Siemens -------------------------------------------- -->
+          <article class="exhibit" data-chrome="unix">
+            <div class="crt">
+              <div class="crt__bar"><span class="crt__title">fcabral@sunfire — /export/home</span><i>80x24</i></div>
+              <pre class="crt__code"><code><span class="c"># the aggregate flapped again at 03:14. nobody was awake.</span>
+$ dladm show-aggr -L
+$ netstat -rn | grep default
+$ snoop -d aggr1 port 1521 | head -<span class="n">20</span>
+
+<span class="c"># find it, prove it, then make it never page anyone again</span>
+$ svcadm restart svc:/network/physical:default</code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 04 · 2006–09</p>
+              <h3>The Siemens years</h3>
+              <p>
+                Advanced network engineering at Siemens — enterprise infrastructure on
+                Solaris, where a link that flaps at three in the morning is somebody's
+                production outage by nine.
+              </p>
+              <p class="plaque__then">
+                Long before anything was "cloud", this is where I learned that a system you
+                cannot observe is a system you do not actually operate.
+              </p>
+              <ul class="plaque__tech"><li>Solaris</li><li>Enterprise networks</li><li>TCP/IP</li><li>Unix</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
           <!-- 05 ------------------------------------------------------- -->
           <article class="exhibit" data-chrome="dos">
             <div class="crt">
@@ -426,7 +456,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 <span class="c">REM  nobody walked a branch with a clipboard again</span></code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 04 · circa 2008</p>
+              <p class="plaque__no">Exhibit 05 · circa 2008</p>
               <h3>The first control plane</h3>
               <p>
                 Rolling technology across a retail bank's branches. I automated my own job:
@@ -461,7 +491,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 }</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 05 · 2009–13</p>
+              <p class="plaque__no">Exhibit 06 · 2009–13</p>
               <h3>ERP, from the inside</h3>
               <p>
                 Dynamics AX from 4.0 onward. Posting routines, vendor invoices, transaction
@@ -486,7 +516,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 }</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 06 · 2009–10, again in 2013</p>
+              <p class="plaque__no">Exhibit 07 · 2009–10, again in 2013</p>
               <h3>A framework for the builders</h3>
               <p>
                 Dynamics AX implementations across industries, coaching the developers, and
@@ -516,7 +546,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 }</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 07 · 2010–11</p>
+              <p class="plaque__no">Exhibit 08 · 2010–11</p>
               <h3>SMS to app</h3>
               <p>
                 A public mobile payment system for taxi services, built at the very start of
@@ -547,7 +577,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 <span class="k">End Function</span></code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 08 · 2011–13</p>
+              <p class="plaque__no">Exhibit 09 · 2011–13</p>
               <h3>Public money, public consequences</h3>
               <p>
                 Systems for a state department of education — teacher allocation, fund
@@ -577,7 +607,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 });</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 09 · 2016–20</p>
+              <p class="plaque__no">Exhibit 10 · 2016–20</p>
               <h3>Procurement meets the ledger</h3>
               <p>
                 A decade of integrations between what a company buys and what it books.
@@ -602,7 +632,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 <span class="c"># you cannot review what you cannot build.</span></code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 10 · 2017–19</p>
+              <p class="plaque__no">Exhibit 11 · 2017–19</p>
               <h3>CTO</h3>
               <p>
                 ERP implementations, product direction, and a large technical team. The job
@@ -633,7 +663,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 <span class="c">// Amsterdam, Chicago and Shanghai, same ledger, same Monday.</span></code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 11 · 2020–25</p>
+              <p class="plaque__no">Exhibit 12 · 2020–25</p>
               <h3>Global by default</h3>
               <p>
                 Almost six years as NetSuite architect for Optiver, one of the world's
@@ -661,7 +691,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
     <span class="k">return</span> []</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 12 · 2025–26</p>
+              <p class="plaque__no">Exhibit 13 · 2025–26</p>
               <h3>Documents, validated</h3>
               <p>
                 Extraction is the easy half. The work is deciding what to trust, what to
@@ -684,7 +714,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 }</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 13 · today</p>
+              <p class="plaque__no">Exhibit 14 · today</p>
               <h3>The mandate check</h3>
               <p>
                 Same job as the rental counter, harder stakes: decide what is allowed,

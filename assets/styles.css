@@ -678,6 +678,19 @@ section {
 }
 
 /* Turbo Pascal: blue field, yellow body, white keywords, grey menu bar. */
+/* Solaris/xterm: phosphor green on black, plain grey title bar. */
+[data-chrome="unix"] .crt {
+  --chrome-bar: #3a3a3a;
+  --chrome-bar-text: #d8d8d8;
+  --chrome-body: #000;
+  --chrome-code: #58d68d;
+  --chrome-k: #eafff2;
+  --chrome-s: #9ae6c0;
+  --chrome-c: #5f7f6d;
+  --chrome-n: #eafff2;
+  --chrome-f: #eafff2;
+}
+
 [data-chrome="pascal"] .crt {
   --chrome-bar: #a8a8a8;
   --chrome-bar-text: #000;
