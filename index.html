@@ -1,26 +1,355 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
+
+<!--
+  ===========================================================================
+  BEFORE THIS IS LIVE-CORRECT, EDIT THE THREE PLACEHOLDERS BELOW.
+  Each is marked inline with an "EDIT:" comment — search the file for "EDIT:".
+
+    1. Display name .......... currently the handle "franciscabral"
+    2. LinkedIn URL .......... currently a placeholder, appears twice
+    3. Prossum Hub blurb ..... expand or rewrite in your own words
+
+  Everything else is drawn from your public repos and cabral.systems.
+  No client names appear anywhere on this page, by design.
+  ===========================================================================
+-->
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>franciscabral's P5 projects</title>
-    <style>
-        body {
-            padding: 0;
-            margin: 0;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>franciscabral — AI agent infrastructure &amp; finance systems</title>
+  <meta name="description"
+    content="Founder of Cabral Systems International. I build the control planes, document-AI pipelines and integrations that let finance operations run on agents.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#05060a">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="franciscabral — AI agent infrastructure &amp; finance systems">
+  <meta property="og:description"
+    content="Founder of Cabral Systems International. I build the control planes, document-AI pipelines and integrations that let finance operations run on agents.">
+  <meta property="og:url" content="https://franciscabral.github.io/">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="canonical" href="https://franciscabral.github.io/">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2305060a'/><path d='M9 23V9h13' stroke='%2322e8ff' stroke-width='3.4' fill='none'/><path d='M9 16h9' stroke='%23ff2bb0' stroke-width='3.4' fill='none'/></svg>">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 
 <body>
-    <a href="/LifeGame/index.html">Life Game</a>
-    <br />
-    <a href="/Snake/index.html">Snake</a>
-    <br />
-    <a href="/StarTravel/index.html">Star Travel</a>
-    <br />
-    <a href="/RhythmStyle/index.html">Rhythmn Style</a>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ==================================================================== -->
+  <!-- HERO                                                                 -->
+  <!-- ==================================================================== -->
+  <header class="hero">
+    <!-- Live re-cuts of the four p5 sketches now archived under /archive. -->
+    <div class="mosaic" aria-hidden="true">
+      <canvas data-sketch="stars" data-speed="11"></canvas>
+      <canvas data-sketch="life"></canvas>
+      <canvas data-sketch="rhythm"></canvas>
+      <canvas data-sketch="snake"></canvas>
+    </div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <div class="wrap hero__inner">
+      <p class="hero__tag">AI agent infrastructure <b>//</b> finance systems</p>
+
+      <!-- EDIT: 1 of 3 — replace the handle with your name as it should read. -->
+      <h1 class="hero__name">franciscabral<span class="dot">_</span></h1>
+
+      <p class="hero__role">
+        I build the <em>control planes</em> that let AI agents run real finance operations.
+      </p>
+
+      <p class="hero__blurb">
+        Founder of Cabral Systems International. Years of finance and procurement systems
+        underneath, an agent platform on top: mandate-driven control planes, document-AI
+        pipelines, and ERP integrations that have to survive month-end<span
+          class="cursor" aria-hidden="true"></span>
+      </p>
+
+      <div class="cta-row">
+        <a class="btn btn--primary" href="https://cabral.systems" rel="noopener">
+          cabral.systems <span aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn--ghost" href="https://github.com/franciscabral" rel="noopener">GitHub</a>
+        <!-- EDIT: 2 of 3 — your LinkedIn URL (also in the contact section below). -->
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/your-handle" rel="noopener">LinkedIn</a>
+      </div>
+
+      <div class="hero__meta">
+        <span><i></i> Cabral Systems International</span>
+        <span>TypeScript · Go · Python · Kotlin</span>
+        <span>Finance systems · Agent infrastructure</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================================================================== -->
+    <!-- WHAT I'M INVOLVED WITH                                             -->
+    <!-- ================================================================== -->
+    <section id="ventures">
+      <div class="wrap">
+        <p class="eyebrow">What I'm involved with</p>
+        <h2>Two things, one thesis.</h2>
+        <p class="lede" style="margin-bottom:38px">
+          Finance systems are where AI agents stop being a demo and start being liable for
+          a number. One attacks that as a practice, the other as a product.
+        </p>
+
+        <div class="grid grid--2">
+          <article class="card card--accent" style="--accent: var(--cyan)">
+            <p class="card__kicker">01 — Consultancy</p>
+            <h3>Cabral Systems International</h3>
+            <p class="card__role">Founder</p>
+            <p>
+              The finance integration control tower. Senior-led integration, automation and
+              rescue for finance and procurement teams — owning the gap between the vendors,
+              the implementation partners and internal IT, where integrations actually live
+              or die.
+            </p>
+            <a class="card__link" href="https://cabral.systems" rel="noopener">
+              cabral.systems <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="card card--accent" style="--accent: var(--magenta)">
+            <p class="card__kicker">02 — Platform</p>
+            <h3>Prossum Hub</h3>
+            <p class="card__role">Building</p>
+            <!-- EDIT: 3 of 3 — expand or rewrite in your own words. -->
+            <p>
+              An ERP powered by AI, built for specific verticals rather than for everyone.
+              Generic ERPs make every industry pay for every other industry's edge cases;
+              this one ships the vertical's actual process as the default, with agents
+              running the parts nobody should be doing by hand — intelligent document
+              capture included, rather than bolted on afterwards.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ================================================================== -->
+    <!-- WHAT I BUILD                                                       -->
+    <!-- ================================================================== -->
+    <section id="work">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--violet">What I build</p>
+        <h2>Four layers, bottom to top.</h2>
+        <p class="lede" style="margin-bottom:38px">
+          The agent work sits on top of the integration work. That order matters — it's why
+          the agents have anything trustworthy to act on.
+        </p>
+
+        <ul class="caps">
+          <li>
+            <span class="num">01</span>
+            <div>
+              <h3>Agent control planes</h3>
+              <p>
+                Mandate-driven development control planes, plus the governance, skills and
+                operating tooling that decide what an agent is allowed to do, what it must
+                prove, and what it can never touch. Written in TypeScript and Go.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <div>
+              <h3>Document AI &amp; intelligent capture</h3>
+              <p>
+                Extraction, validation and hand-off pipelines for invoices and financial
+                documents — portal configuration, custom extensions, and the tooling around
+                them, wired straight into downstream ERP and procurement systems.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <div>
+              <h3>Finance &amp; procurement integration</h3>
+              <p>
+                A dozen-plus production integrations between procurement and ERP platforms:
+                payments, tax determination, cost-centre and master-data sync, purchase-order
+                flows and AP automation — across retail, fintech, logistics and services.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <div>
+              <h3>Operational tooling</h3>
+              <p>
+                The unglamorous things that make the above usable: inventory cycle-count
+                web and native mobile apps, credential and client vaults, schema-inference
+                utilities, and internal developer tooling.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ================================================================== -->
+    <!-- STACK                                                              -->
+    <!-- ================================================================== -->
+    <section id="stack">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--lime">Stack</p>
+        <h2>What I actually reach for.</h2>
+
+        <div style="margin-top:34px">
+          <div class="stack-group">
+            <p class="stack-group__label">Languages</p>
+            <ul class="chips">
+              <li>TypeScript</li>
+              <li>Go</li>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>Kotlin</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+
+          <div class="stack-group">
+            <p class="stack-group__label">Finance &amp; procurement systems</p>
+            <ul class="chips">
+              <li>NetSuite / SuiteScript</li>
+              <li>SuiteTax</li>
+              <li>Coupa</li>
+              <li>AP automation</li>
+              <li>Document AI / IDP</li>
+              <li>Master data</li>
+            </ul>
+          </div>
+
+          <div class="stack-group">
+            <p class="stack-group__label">Agents &amp; AI</p>
+            <ul class="chips">
+              <li>Agent control planes</li>
+              <li>Governance &amp; mandates</li>
+              <li>Skill catalogues</li>
+              <li>Prompt catalogues</li>
+              <li>Eval &amp; guardrails</li>
+              <li>MCP</li>
+            </ul>
+          </div>
+
+          <div class="stack-group">
+            <p class="stack-group__label">Build &amp; run</p>
+            <ul class="chips">
+              <li>Next.js</li>
+              <li>Node</li>
+              <li>REST / webhooks</li>
+              <li>Middleware &amp; queues</li>
+              <li>Vercel</li>
+              <li>Git-backed ops</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ================================================================== -->
+    <!-- ARCADE / ARCHIVE                                                   -->
+    <!-- ================================================================== -->
+    <section id="arcade">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--magenta">The arcade — archived</p>
+        <h2>Where this domain started.</h2>
+        <p class="lede" style="margin-bottom:38px">
+          Four p5.js sketches from an earlier life of this repo. They're kept exactly as
+          they were written, still playable. The tiles below — and the ones drifting behind
+          the header — are dependency-free canvas re-cuts of them.
+        </p>
+
+        <div class="grid grid--4">
+          <a class="sketch-card" href="archive/StarTravel/index.html">
+            <canvas data-sketch="stars" data-density="low" data-speed="9" aria-hidden="true"></canvas>
+            <div class="sketch-card__body">
+              <h3>Star Travel</h3>
+              <p>Viagem nas Estrelas — perspective-projected warp starfield.</p>
+            </div>
+          </a>
+
+          <a class="sketch-card" href="archive/LifeGame/index.html">
+            <canvas data-sketch="life" data-density="low" aria-hidden="true"></canvas>
+            <div class="sketch-card__body">
+              <h3>Life Game</h3>
+              <p>Jogo da Vida — Conway's cellular automaton on a torus.</p>
+            </div>
+          </a>
+
+          <a class="sketch-card" href="archive/RhythmStyle/index.html">
+            <canvas data-sketch="rhythm" data-density="low" aria-hidden="true"></canvas>
+            <div class="sketch-card__body">
+              <h3>Rhythm Style</h3>
+              <p>Four lanes, falling arrows, a judgement line. Use the arrow keys.</p>
+            </div>
+          </a>
+
+          <a class="sketch-card" href="archive/Snake/index.html">
+            <canvas data-sketch="snake" data-density="low" aria-hidden="true"></canvas>
+            <div class="sketch-card__body">
+              <h3>Snake</h3>
+              <p>Cobrinha — the classic, on a 20px grid.</p>
+            </div>
+          </a>
+        </div>
+
+        <div style="margin-top:20px">
+          <a class="card__link" href="archive/" style="--accent: var(--magenta)">
+            Open the full archive <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- CONTACT                                                            -->
+    <!-- ================================================================== -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <p class="eyebrow" style="justify-content:center">Get in touch</p>
+        <h2>If it touches finance systems, I've probably fixed one.</h2>
+        <p class="lede">
+          Integration work, agent infrastructure, or a system that went live and never
+          became reliable — start with a conversation.
+        </p>
+        <div class="links">
+          <a class="btn btn--primary" href="mailto:hello@cabral.systems">hello@cabral.systems</a>
+          <a class="btn btn--ghost" href="https://cabral.systems" rel="noopener">cabral.systems</a>
+          <a class="btn btn--ghost" href="https://github.com/franciscabral" rel="noopener">GitHub</a>
+          <!-- EDIT: 2 of 3 (second occurrence) — your LinkedIn URL. -->
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/your-handle" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer__row">
+      <span>franciscabral.github.io</span>
+      <span><a href="archive/">Arcade archive</a></span>
+      <span>Built in the open</span>
+    </div>
+  </footer>
+
+  <script src="assets/sketches.js"></script>
+  <script>
+    Sketches.mountAll();
+  </script>
 </body>
 
 </html>

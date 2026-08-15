@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The arcade — franciscabral</title>
+  <meta name="description" content="Four archived p5.js sketches: Star Travel, Life Game, Rhythm Style and Snake.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#05060a">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2305060a'/><path d='M9 23V9h13' stroke='%2322e8ff' stroke-width='3.4' fill='none'/><path d='M9 16h9' stroke='%23ff2bb0' stroke-width='3.4' fill='none'/></svg>">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+  <main id="main">
+    <section style="padding-top:clamp(72px,12vh,120px)">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--magenta">Archive</p>
+        <h2 style="font-size:clamp(30px,5.4vw,52px);letter-spacing:-0.035em">The arcade.</h2>
+        <p class="lede" style="margin-bottom:16px">
+          Four p5.js sketches written while learning the library. They're archived rather
+          than deleted — untouched source, original canvas sizes, still playable.
+        </p>
+        <p class="lede" style="margin-bottom:40px;color:var(--faint);font-size:14px">
+          The previews below are dependency-free canvas re-cuts. Click through for the real
+          p5 versions.
+        </p>
+
+        <div class="grid grid--2">
+          <a class="sketch-card" href="StarTravel/index.html">
+            <canvas data-sketch="stars" data-speed="10" aria-hidden="true"></canvas>
+            <div class="sketch-card__body">
+              <h3>Star Travel <span style="color:var(--faint);font-weight:400">— Viagem nas Estrelas</span></h3>
+              <p>
+                A thousand stars projected through a shrinking z-axis. The oldest trick in
+                creative coding and still the best one.
+              </p>
+            </div>
+          </a>
+
+          <a class="sketch-card" href="LifeGame/index.html">
+            <canvas data-sketch="life" aria-hidden="true"></canvas>
+            <div class="sketch-card__body">
+              <h3>Life Game <span style="color:var(--faint);font-weight:400">— Jogo da Vida</span></h3>
+              <p>
+                Conway's cellular automaton on a wrapping grid, seeded from the classic
+                patterns. Click to reseed.
+              </p>
+            </div>
+          </a>
+
+          <a class="sketch-card" href="RhythmStyle/index.html">
+            <canvas data-sketch="rhythm" aria-hidden="true"></canvas>
+            <div class="sketch-card__body">
+              <h3>Rhythm Style</h3>
+              <p>
+                Four lanes of arrows falling toward a judgement line. Play it with the
+                arrow keys.
+              </p>
+            </div>
+          </a>
+
+          <a class="sketch-card" href="Snake/index.html">
+            <canvas data-sketch="snake" aria-hidden="true"></canvas>
+            <div class="sketch-card__body">
+              <h3>Snake <span style="color:var(--faint);font-weight:400">— Cobrinha</span></h3>
+              <p>
+                The classic, on a 20-pixel grid at ten frames a second. Arrow keys to
+                steer.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div style="margin-top:36px">
+          <a class="btn btn--ghost" href="../"><span aria-hidden="true">←</span> Back</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer__row">
+      <span>franciscabral.github.io / archive</span>
+      <span><a href="../">Home</a></span>
+    </div>
+  </footer>
+
+  <script src="../assets/sketches.js"></script>
+  <script>
+    Sketches.mountAll();
+  </script>
+</body>
+
+</html>
