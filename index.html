@@ -365,29 +365,32 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
           <!-- 03c · Siemens -------------------------------------------- -->
           <article class="exhibit" data-chrome="unix">
             <div class="crt">
-              <div class="crt__bar"><span class="crt__title">root@sunfire — Solaris 8 (SPARC)</span><i>80x24</i></div>
-              <pre class="crt__code"><code><span class="c"># the link dropped again at 03:14. nobody was awake.</span>
-bash-2.03<span class="k">#</span> ifconfig -a
-bash-2.03<span class="k">#</span> netstat -rn | grep default
-bash-2.03<span class="k">#</span> snoop -d hme0 | head -<span class="n">20</span>
-
-<span class="c"># patch it, prove it, then make it never page anyone again</span>
-bash-2.03<span class="k">#</span> patchadd -M /var/spool/patch
-bash-2.03<span class="k">#</span> /etc/init.d/sshd start</code></pre>
+              <div class="crt__bar"><span class="crt__title">ERX-1440 — running-configuration</span><i>80x24</i></div>
+              <pre class="crt__code"><code><span class="c">! Juniper ERX-1440 — broadband edge, DSLAM aggregation</span>
+<span class="k">virtual-router</span> DSLAM_AGG
+ <span class="k">aaa authentication ppp</span> default radius
+ <span class="k">ip route</span> <span class="n">0.0.0.0 0.0.0.0 192.0.2.1</span>
+<span class="c">!</span>
+<span class="k">ip rate-limit-profile</span> subscriber one-rate
+ <span class="k">committed-rate</span> <span class="n">512000</span>
+ <span class="k">excess-burst</span>  <span class="n">128000</span>
+<span class="c">!</span>
+<span class="c">! 03:14. a region loses broadband. you have minutes.</span></code></pre>
             </div>
             <div class="plaque">
               <p class="plaque__no">Exhibit 03 · 2006–09</p>
               <h3>The Siemens years</h3>
               <p>
-                Advanced network engineering at Siemens — carrier and enterprise
-                infrastructure on Solaris 8 SPARC, where a link that drops at three in the
-                morning is somebody's production outage by nine.
+                Advanced network engineering at Siemens: carrier broadband edge routers,
+                subscriber aggregation, QoS and rate-limit profiles — on Solaris 8 SPARC
+                underneath. When a link drops at three in the morning, a region loses its
+                internet, and you find out how well you documented anything.
               </p>
               <p class="plaque__then">
-                Long before anything was "cloud", this is where I learned that a system you
-                cannot observe is a system you do not actually operate.
+                Long before anything was "cloud", carrier networks taught me that a system
+                you cannot observe is a system you do not actually operate.
               </p>
-              <ul class="plaque__tech"><li>Solaris 8 / SPARC</li><li>Telecom infrastructure</li><li>TCP/IP</li><li>Unix</li></ul>
+              <ul class="plaque__tech"><li>Juniper ERX / B-RAS</li><li>Solaris 8 / SPARC</li><li>TACACS+</li><li>QoS</li><li>TCP/IP</li></ul>
               <p class="plaque__recon">reconstruction</p>
             </div>
           </article>
