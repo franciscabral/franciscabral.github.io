@@ -206,7 +206,9 @@
         <div class="arc" aria-hidden="true">
           <span>Retail software</span>
           <span>Infrastructure</span>
+          <span>Algorithms</span>
           <span>Enterprise &amp; banking</span>
+          <span>Platforms</span>
           <span>Founder</span>
         </div>
 
@@ -218,11 +220,24 @@
             work right now. The same shape of problem I work on today, with far worse tools.
           </p>
           <p>
+            I dropped out of college and won the university coding competitions anyway —
+            both divisions, rookie and veteran, while still a rookie myself. Pascal and C,
+            algorithms written to be tested rather than admired. It's the closest thing I
+            have to a credential, and it's the one I'd point at.
+          </p>
+          <p>
             What followed was less romantic and more useful. Keeping networks and machines
-            alive. Enterprise systems at a scale where nothing is ever fully understood by
-            one person. Technology rollouts across a retail bank's branches, where the
-            deadline is Monday morning and there is no version of done that excludes the
-            branch in the middle of nowhere.
+            alive. ERP posting routines, where a bug and a misstated ledger are the same
+            event. Technology rollouts across a retail bank's branches, where the deadline
+            is Monday morning and there is no version of done that excludes the branch in
+            the middle of nowhere.
+          </p>
+          <p>
+            At the bank I automated my own job. Batch scripts walked the agency networks,
+            inventoried every device, and produced the spreadsheet procurement bought from.
+            Evidence gathered automatically, a purchase decided on deterministic data, a
+            person approving. Nobody called that an agent in 2010 — but it is exactly the
+            loop I build today.
           </p>
           <p>
             Somewhere in there I started a business of my own and it failed. That taught me
@@ -250,7 +265,7 @@
     <section id="museum">
       <div class="wrap">
         <p class="eyebrow eyebrow--violet">Time travel</p>
-        <h2>Seven screens, twenty-odd years.</h2>
+        <h2>Ten screens, twenty-odd years.</h2>
         <p class="lede">
           The tools changed, the job mostly didn't: make the thing work, on time, for
           people who are waiting. Scroll sideways and watch the chrome catch up.
@@ -283,7 +298,7 @@
                 Inventory, memberships, late fees — and a queue of people who needed it to
                 work right now.
               </p>
-              <ul class="plaque__tech"><li>VB6</li><li>Access</li></ul>
+              <ul class="plaque__tech"><li>VB6</li><li>Visual Studio 6.0</li><li>Access</li></ul>
               <p class="plaque__recon">reconstruction</p>
             </div>
           </article>
@@ -311,26 +326,29 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
           </article>
 
           <!-- 03 ------------------------------------------------------- -->
-          <article class="exhibit" data-chrome="ide">
+          <article class="exhibit" data-chrome="pascal">
             <div class="crt">
-              <div class="crt__bar crt__bar--ide"><span class="crt__title">FareEngine.cs — Visual Studio</span><i>_ □ ×</i></div>
-              <pre class="crt__code"><code><span class="k">public decimal</span> <span class="f">Fare</span>(Trip trip)
-{
-    <span class="k">var</span> rate  = _rates.For(trip.ContractId, trip.StartedAt);
-    <span class="k">var</span> total = rate.Base + (rate.PerKm * trip.Distance);
-
-    <span class="c">// corporate contracts bill net of the negotiated discount</span>
-    <span class="k">return</span> trip.IsCorporate ? total * (<span class="n">1</span> - rate.Discount) : total;
-}</code></pre>
+              <div class="crt__bar crt__bar--pascal"><span class="crt__title">FILE  EDIT  RUN  COMPILE</span><i>F1 Help</i></div>
+              <pre class="crt__code"><code><span class="k">program</span> Combinatoria;
+<span class="k">const</span> MODULO = <span class="n">1000000007</span>;
+<span class="k">var</span> dp: <span class="k">array</span>[<span class="n">0</span>..MAXN] <span class="k">of</span> Int64;
+    i, n: LongInt;
+<span class="k">begin</span>
+  dp[<span class="n">0</span>] := <span class="n">1</span>;
+  <span class="k">for</span> i := <span class="n">1</span> <span class="k">to</span> n <span class="k">do</span>
+    dp[i] := (dp[i<span class="k">-</span><span class="n">1</span>] * i) <span class="k">mod</span> MODULO;
+  writeln(dp[n]);
+<span class="k">end</span>.</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 03 · circa 2009</p>
-              <h3>Line-of-business, .NET era</h3>
+              <p class="plaque__no">Exhibit 03 · circa 2007</p>
+              <h3>Algorithms, and two trophies</h3>
               <p>
-                Systems with real money moving through them — mobility, and work for
-                government. Where correctness stops being a matter of taste.
+                Pascal and C, written to test algorithms and then taken to the university
+                coding competitions. I dropped out of college — and won both divisions,
+                rookie and veteran, while still a rookie myself.
               </p>
-              <ul class="plaque__tech"><li>C#</li><li>VB.NET</li><li>SQL Server</li></ul>
+              <ul class="plaque__tech"><li>Pascal</li><li>C</li><li>Turbo Pascal</li></ul>
               <p class="plaque__recon">reconstruction</p>
             </div>
           </article>
@@ -353,18 +371,108 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
 }</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 04 · circa 2012</p>
+              <p class="plaque__no">Exhibit 04 · circa 2008</p>
               <h3>ERP, from the inside</h3>
               <p>
-                Posting routines, vendor invoices, transaction scopes. The first job where
-                a bug and a misstated ledger were the same event.
+                Dynamics AX from 4.0 onward. Posting routines, vendor invoices, transaction
+                scopes — the first job where a bug and a misstated ledger were the same
+                event.
               </p>
-              <ul class="plaque__tech"><li>X++</li><li>Dynamics AX</li><li>PL/SQL</li><li>Oracle</li></ul>
+              <ul class="plaque__tech"><li>X++</li><li>Dynamics AX 4.0</li><li>PL/SQL</li><li>Oracle</li></ul>
               <p class="plaque__recon">reconstruction</p>
             </div>
           </article>
 
           <!-- 05 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="dos">
+            <div class="crt">
+              <div class="crt__bar crt__bar--dos"><span class="crt__title">C:\WINDOWS\system32\cmd.exe</span></div>
+              <pre class="crt__code"><code><span class="c">@echo off</span>
+<span class="k">for</span> /f <span class="s">"tokens=1,2"</span> %%a <span class="k">in</span> (agencias.txt) <span class="k">do</span> (
+  psexec \\%%a wmic computersystem get model <span class="k">&gt;&gt;</span> inv.csv
+  psexec \\%%a wmic os get version           <span class="k">&gt;&gt;</span> inv.csv
+)
+cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
+<span class="c">REM  nobody walked a branch with a clipboard again</span></code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 05 · circa 2010</p>
+              <h3>The first control plane</h3>
+              <p>
+                Rolling technology across a retail bank's branches. I automated my own job:
+                batch walked the agency networks, inventoried every device, and produced the
+                spreadsheet procurement bought from.
+              </p>
+              <p class="plaque__then">
+                Evidence gathered automatically, a purchase decided on deterministic data, a
+                human approving. That is the loop I build for agents now — this one was
+                written in <code>.bat</code>.
+              </p>
+              <ul class="plaque__tech"><li>Batch</li><li>VBScript</li><li>WMI</li><li>PsExec</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
+          <!-- 06 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="ide">
+            <div class="crt">
+              <div class="crt__bar crt__bar--ide"><span class="crt__title">TripsController.cs — Visual Studio</span><i>_ □ ×</i></div>
+              <pre class="crt__code"><code><span class="c">// the driver used to text us. now the app posts it.</span>
+[<span class="f">HttpPost</span>(<span class="s">"trips/{id}/accept"</span>)]
+<span class="k">public async</span> Task&lt;IActionResult&gt; <span class="f">Accept</span>(Guid id, AcceptCmd cmd)
+{
+    <span class="k">var</span> trip = <span class="k">await</span> _trips.Get(id);
+    trip.AssignDriver(cmd.DriverId, cmd.At);
+    <span class="k">return</span> Ok(<span class="k">await</span> _trips.Save(trip));
+}</code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 06 · circa 2011</p>
+              <h3>SMS to app</h3>
+              <p>
+                Moving a live mobility operation off text messages and onto a mobile app, at
+                the very beginning of that era. Drivers, dispatch and billing all had to
+                keep working through the switch.
+              </p>
+              <p class="plaque__then">
+                I have carried an operation across a platform shift before, with the meter
+                running. That is the part of the AI shift most people are underestimating.
+              </p>
+              <ul class="plaque__tech"><li>C#</li><li>VB.NET</li><li>SQL Server</li><li>REST</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
+          <!-- 07 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="ide">
+            <div class="crt">
+              <div class="crt__bar crt__bar--ide"><span class="crt__title">CrudService.cs — Visual Studio</span><i>_ □ ×</i></div>
+              <pre class="crt__code"><code><span class="k">public abstract class</span> <span class="f">CrudService</span>&lt;T&gt; : IService&lt;T&gt;
+    <span class="k">where</span> T : Entity
+{
+    <span class="c">// a new module should be a subclass, not a new project</span>
+    <span class="k">public virtual</span> Task&lt;T&gt; <span class="f">Save</span>(T e) =&gt; _uow.Repo&lt;T&gt;().Upsert(e);
+    <span class="k">public virtual</span> Task&lt;T&gt; <span class="f">Get</span>(Guid id) =&gt; _uow.Repo&lt;T&gt;().Find(id);
+}</code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 07 · circa 2014</p>
+              <h3>A framework for the builders</h3>
+              <p>
+                Not shipping features — shipping the thing the other developers built
+                features with. Conventions, scaffolding, and the boring guarantees that let
+                a team move without breaking each other.
+              </p>
+              <p class="plaque__then">
+                Same instinct as the agent control planes and skill catalogues I write
+                today. The builders changed; making them faster and safer didn't.
+              </p>
+              <ul class="plaque__tech"><li>C#</li><li>.NET</li><li>Framework design</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
+          <!-- 08 ------------------------------------------------------- -->
           <article class="exhibit" data-chrome="ide">
             <div class="crt">
               <div class="crt__bar crt__bar--ide"><span class="crt__title">ue_po_sync.js — SuiteScript 2.0</span><i>_ □ ×</i></div>
@@ -378,7 +486,7 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
 });</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 05 · circa 2016</p>
+              <p class="plaque__no">Exhibit 08 · circa 2016</p>
               <h3>Procurement meets the ledger</h3>
               <p>
                 A decade of integrations between what a company buys and what it books.
@@ -389,7 +497,7 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
             </div>
           </article>
 
-          <!-- 06 ------------------------------------------------------- -->
+          <!-- 09 ------------------------------------------------------- -->
           <article class="exhibit" data-chrome="neon">
             <div class="crt">
               <div class="crt__bar crt__bar--neon"><span class="crt__title">validate.py</span><i>●&nbsp;●&nbsp;●</i></div>
@@ -400,7 +508,7 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
     <span class="k">return</span> []</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 06 · circa 2021</p>
+              <p class="plaque__no">Exhibit 09 · circa 2021</p>
               <h3>Documents, validated</h3>
               <p>
                 Extraction is the easy half. The work is deciding what to trust, what to
@@ -411,7 +519,7 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
             </div>
           </article>
 
-          <!-- 07 ------------------------------------------------------- -->
+          <!-- 10 ------------------------------------------------------- -->
           <article class="exhibit" data-chrome="neon">
             <div class="crt">
               <div class="crt__bar crt__bar--neon"><span class="crt__title">plane.go</span><i>●&nbsp;●&nbsp;●</i></div>
@@ -423,7 +531,7 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
 }</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 07 · today</p>
+              <p class="plaque__no">Exhibit 10 · today</p>
               <h3>The mandate check</h3>
               <p>
                 Same job as the rental counter, harder stakes: decide what is allowed,
@@ -478,6 +586,9 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
               <li>VB.NET</li>
               <li>C#</li>
               <li>X++</li>
+              <li>C</li>
+              <li>Pascal</li>
+              <li>VBScript</li>
               <li>Batch</li>
             </ul>
           </div>
@@ -525,7 +636,10 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
               <li>Hardware &amp; imaging</li>
               <li>Windows Server</li>
               <li>Branch rollouts</li>
-              <li>Dynamics AX</li>
+              <li>Device inventory automation</li>
+              <li>WMI / PsExec</li>
+              <li>Dynamics AX 4.0+</li>
+              <li>Visual Studio 6.0+</li>
             </ul>
           </div>
 

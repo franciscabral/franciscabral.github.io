@@ -654,6 +654,23 @@ section {
   --chrome-f: #fff;
 }
 
+/* Turbo Pascal: blue field, yellow body, white keywords, grey menu bar. */
+[data-chrome="pascal"] .crt {
+  --chrome-bar: #a8a8a8;
+  --chrome-bar-text: #000;
+  --chrome-body: #0000a8;
+  --chrome-code: #ffff54;
+  --chrome-k: #fff;
+  --chrome-s: #54ffff;
+  --chrome-c: #a8a8a8;
+  --chrome-n: #54ff54;
+  --chrome-f: #fff;
+}
+[data-chrome="pascal"] .crt__bar {
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
 [data-chrome="ide"] .crt {
   --chrome-bar: #2d4b7c;
   --chrome-bar-text: #eef3fb;
@@ -710,6 +727,22 @@ section {
   line-height: 1.6;
   color: #a3acbf;
   margin: 0;
+}
+
+/* The "then -> now" line: what this exhibit became. Two classes to outrank
+   `.plaque > p`, same reason as the reconstruction mark. */
+.plaque > .plaque__then {
+  margin: 14px 0 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--lime);
+  font-size: 13px;
+  line-height: 1.55;
+  color: #cbd3e2;
+}
+.plaque__then code {
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--lime);
 }
 
 .plaque__tech {
