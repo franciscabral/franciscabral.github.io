@@ -6,8 +6,6 @@
   One placeholder left, marked inline with an "EDIT:" comment:
   the Prossum Hub blurb — expand or rewrite it in your own words.
 
-  LinkedIn points at franciscabral.com, which redirects to the profile.
-
   Everything else is drawn from your public repos and cabral.systems.
   No client names appear anywhere on this page, by design.
   ===========================================================================
@@ -74,7 +72,7 @@
           cabral.systems <span aria-hidden="true">→</span>
         </a>
         <a class="btn btn--ghost" href="https://github.com/franciscabral" rel="noopener">GitHub</a>
-        <a class="btn btn--ghost" href="https://franciscabral.com" rel="noopener">LinkedIn</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/francisalvescabral/" rel="noopener">LinkedIn</a>
       </div>
 
       <div class="hero__meta">
@@ -481,8 +479,8 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
           <!-- 04 ------------------------------------------------------- -->
           <article class="exhibit" data-chrome="ide">
             <div class="crt">
-              <div class="crt__bar crt__bar--ide"><span class="crt__title">CustVendCreatePaymJournal_Cust_MSBS — AOT \ Classes</span><i>_ □ ×</i></div>
-              <pre class="crt__code"><code><span class="k">void</span> <span class="f">updateLines</span>(LedgerJournalId _journalId, EnrollId_MSBS _enrollId,
+              <div class="crt__bar crt__bar--ide"><span class="crt__title">CustVendCreatePaymJournal_Cust — AOT \ Classes</span><i>_ □ ×</i></div>
+              <pre class="crt__code"><code><span class="k">void</span> <span class="f">updateLines</span>(LedgerJournalId _journalId, EnrollId _enrollId,
                  CompanyBankAccountId _bankAccountId)
 {
     LedgerJournalTrans  ledgerJournalTrans;
@@ -492,7 +490,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
     <span class="k">while select</span> forupdate ledgerJournalTrans
         <span class="k">where</span> ledgerJournalTrans.JournalNum == _journalId
     {
-        ledgerJournalTrans.EnrollId_MSBS = _enrollId;
+        ledgerJournalTrans.EnrollId = _enrollId;
         ledgerJournalTrans.OffsetAccountType = LedgerJournalACType::Bank;
         ledgerJournalTrans.OffsetAccount = _bankAccountId;
         ledgerJournalTrans.update();
@@ -509,7 +507,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
                 Portal front end on SharePoint so every school had a web interface into the
                 franchisor's ERP. The code here is mine, recovered from a backup of the
                 machine I wrote it on: October 2010, doc comments in Portuguese, work-item
-                tags in the margins.
+                tags in the margins, employer suffix trimmed off the identifiers.
               </p>
               <p class="plaque__then">
                 Hundreds of sites reaching one ERP through a browser, on someone else's
@@ -517,7 +515,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
                 anyone sold us the word for it.
               </p>
               <ul class="plaque__tech"><li>X++</li><li>Dynamics AX 4.0</li><li>Enterprise Portal</li><li>SharePoint</li><li>PL/SQL</li></ul>
-              <p class="plaque__recon">verbatim, 2010 · signature wrapped to fit</p>
+              <p class="plaque__recon">my 2010 source · suffix redacted, signature wrapped</p>
             </div>
           </article>
 
@@ -975,7 +973,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
           <a class="btn btn--primary" href="mailto:hello@cabral.systems">hello@cabral.systems</a>
           <a class="btn btn--ghost" href="https://cabral.systems" rel="noopener">cabral.systems</a>
           <a class="btn btn--ghost" href="https://github.com/franciscabral" rel="noopener">GitHub</a>
-          <a class="btn btn--ghost" href="https://franciscabral.com" rel="noopener">LinkedIn</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/francisalvescabral/" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </section>
