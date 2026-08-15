@@ -3,12 +3,10 @@
 
 <!--
   ===========================================================================
-  BEFORE THIS IS LIVE-CORRECT, EDIT THE THREE PLACEHOLDERS BELOW.
-  Each is marked inline with an "EDIT:" comment — search the file for "EDIT:".
+  One placeholder left, marked inline with an "EDIT:" comment:
+  the Prossum Hub blurb — expand or rewrite it in your own words.
 
-    1. Display name .......... currently the handle "franciscabral"
-    2. LinkedIn URL .......... currently a placeholder, appears twice
-    3. Prossum Hub blurb ..... expand or rewrite in your own words
+  LinkedIn points at franciscabral.com, which redirects to the profile.
 
   Everything else is drawn from your public repos and cabral.systems.
   No client names appear anywhere on this page, by design.
@@ -18,14 +16,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>franciscabral — AI agent infrastructure &amp; finance systems</title>
+  <title>Francis Cabral — AI agent infrastructure &amp; finance systems</title>
   <meta name="description"
     content="Founder of Cabral Systems International. I build the control planes, document-AI pipelines and integrations that let finance operations run on agents.">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#05060a">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="franciscabral — AI agent infrastructure &amp; finance systems">
+  <meta property="og:title" content="Francis Cabral — AI agent infrastructure &amp; finance systems">
   <meta property="og:description"
     content="Founder of Cabral Systems International. I build the control planes, document-AI pipelines and integrations that let finance operations run on agents.">
   <meta property="og:url" content="https://franciscabral.github.io/">
@@ -48,7 +46,7 @@
     <div class="mosaic" aria-hidden="true">
       <canvas data-sketch="stars" data-speed="11"></canvas>
       <canvas data-sketch="life"></canvas>
-      <canvas data-sketch="rhythm"></canvas>
+      <canvas data-sketch="breakout"></canvas>
       <canvas data-sketch="snake"></canvas>
     </div>
     <div class="scanlines" aria-hidden="true"></div>
@@ -56,8 +54,7 @@
     <div class="wrap hero__inner">
       <p class="hero__tag">AI agent infrastructure <b>//</b> finance systems</p>
 
-      <!-- EDIT: 1 of 3 — replace the handle with your name as it should read. -->
-      <h1 class="hero__name">franciscabral<span class="dot">_</span></h1>
+      <h1 class="hero__name">Francis Cabral<span class="dot">_</span></h1>
 
       <p class="hero__role">
         I build the <em>control planes</em> that let AI agents run real finance operations.
@@ -75,8 +72,7 @@
           cabral.systems <span aria-hidden="true">→</span>
         </a>
         <a class="btn btn--ghost" href="https://github.com/franciscabral" rel="noopener">GitHub</a>
-        <!-- EDIT: 2 of 3 — your LinkedIn URL (also in the contact section below). -->
-        <a class="btn btn--ghost" href="https://www.linkedin.com/in/your-handle" rel="noopener">LinkedIn</a>
+        <a class="btn btn--ghost" href="https://franciscabral.com" rel="noopener">LinkedIn</a>
       </div>
 
       <div class="hero__meta">
@@ -121,7 +117,7 @@
             <p class="card__kicker">02 — Platform</p>
             <h3>Prossum Hub</h3>
             <p class="card__role">Building</p>
-            <!-- EDIT: 3 of 3 — expand or rewrite in your own words. -->
+            <!-- EDIT — expand or rewrite in your own words. -->
             <p>
               An ERP powered by AI, built for specific verticals rather than for everyone.
               Generic ERPs make every industry pay for every other industry's edge cases;
@@ -266,51 +262,54 @@
     <!-- ================================================================== -->
     <section id="arcade">
       <div class="wrap">
-        <p class="eyebrow eyebrow--magenta">The arcade — archived</p>
+        <p class="eyebrow eyebrow--magenta">The arcade</p>
         <h2>Where this domain started.</h2>
         <p class="lede" style="margin-bottom:38px">
-          Four p5.js sketches from an earlier life of this repo. They're kept exactly as
-          they were written, still playable. The tiles below — and the ones drifting behind
-          the header — are dependency-free canvas re-cuts of them.
+          This repo started as p5.js sketches. They now live in a cabinet you can actually
+          play — Snake and Breakout for score, Star Travel and Life Game to poke at. The
+          tiles below, and the ones drifting behind the header, are canvas re-cuts of them.
         </p>
 
         <div class="grid grid--4">
-          <a class="sketch-card" href="archive/StarTravel/index.html">
+          <a class="sketch-card" href="arcade/#stars">
             <canvas data-sketch="stars" data-density="low" data-speed="9" aria-hidden="true"></canvas>
             <div class="sketch-card__body">
               <h3>Star Travel</h3>
-              <p>Viagem nas Estrelas — perspective-projected warp starfield.</p>
+              <p>Steer the warp with the mouse, hold to burn.</p>
             </div>
           </a>
 
-          <a class="sketch-card" href="archive/LifeGame/index.html">
+          <a class="sketch-card" href="arcade/#life">
             <canvas data-sketch="life" data-density="low" aria-hidden="true"></canvas>
             <div class="sketch-card__body">
               <h3>Life Game</h3>
-              <p>Jogo da Vida — Conway's cellular automaton on a torus.</p>
+              <p>Conway's automaton — paint your own soup and run it.</p>
             </div>
           </a>
 
-          <a class="sketch-card" href="archive/RhythmStyle/index.html">
-            <canvas data-sketch="rhythm" data-density="low" aria-hidden="true"></canvas>
+          <a class="sketch-card" href="arcade/#breakout">
+            <canvas data-sketch="breakout" data-density="low" aria-hidden="true"></canvas>
             <div class="sketch-card__body">
-              <h3>Rhythm Style</h3>
-              <p>Four lanes, falling arrows, a judgement line. Use the arrow keys.</p>
+              <h3>Breakout</h3>
+              <p>Clear the wall. The paddle angle is the whole game.</p>
             </div>
           </a>
 
-          <a class="sketch-card" href="archive/Snake/index.html">
+          <a class="sketch-card" href="arcade/#snake">
             <canvas data-sketch="snake" data-density="low" aria-hidden="true"></canvas>
             <div class="sketch-card__body">
               <h3>Snake</h3>
-              <p>Cobrinha — the classic, on a 20px grid.</p>
+              <p>Cobrinha — walls kill, speed ramps, bonus fruit.</p>
             </div>
           </a>
         </div>
 
         <div style="margin-top:20px">
-          <a class="card__link" href="archive/" style="--accent: var(--magenta)">
-            Open the full archive <span aria-hidden="true">→</span>
+          <a class="card__link" href="arcade/" style="--accent: var(--magenta)">
+            Enter the arcade <span aria-hidden="true">→</span>
+          </a>
+          <a class="card__link" href="archive/" style="--accent: var(--faint); margin-left:26px">
+            Original sketches <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
@@ -331,8 +330,7 @@
           <a class="btn btn--primary" href="mailto:hello@cabral.systems">hello@cabral.systems</a>
           <a class="btn btn--ghost" href="https://cabral.systems" rel="noopener">cabral.systems</a>
           <a class="btn btn--ghost" href="https://github.com/franciscabral" rel="noopener">GitHub</a>
-          <!-- EDIT: 2 of 3 (second occurrence) — your LinkedIn URL. -->
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/your-handle" rel="noopener">LinkedIn</a>
+          <a class="btn btn--ghost" href="https://franciscabral.com" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </section>
