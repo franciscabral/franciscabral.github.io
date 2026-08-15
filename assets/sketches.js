@@ -408,11 +408,12 @@
         for (var i = 0; i < s.bricks.length; i++) {
           var k = s.bricks[i];
           if (!k.alive) continue;
-          ctx.fillStyle = rgba(ROW_COLOURS[k.row % ROW_COLOURS.length], 0.78);
+          // Kept low: in the hero mosaic this band sits directly behind body copy.
+          ctx.fillStyle = rgba(ROW_COLOURS[k.row % ROW_COLOURS.length], 0.5);
           ctx.fillRect(k.x, k.y, k.w, k.h);
         }
 
-        ctx.fillStyle = rgba(PALETTE.cyan, 0.95);
+        ctx.fillStyle = rgba(PALETTE.cyan, 0.7);
         ctx.fillRect(s.paddleX - s.paddleW / 2, s.paddleY, s.paddleW, Math.max(3, s.h * 0.018));
 
         ctx.fillStyle = 'rgba(233,237,246,0.98)';
