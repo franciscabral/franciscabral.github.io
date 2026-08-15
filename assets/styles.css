@@ -539,6 +539,265 @@ section {
   }
 }
 
+/* --- time travel / the museum ------------------------------------------- */
+
+.strip-wrap {
+  margin-top: 38px;
+}
+
+.strip {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  /* Bleed to the viewport edge so the strip reads as continuous film. */
+  padding: 4px var(--gutter) 22px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+.strip::-webkit-scrollbar {
+  height: 6px;
+}
+.strip::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 3px;
+}
+.strip:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: -2px;
+}
+
+.exhibit {
+  flex: 0 0 min(560px, 84vw);
+  /* start, not center: the nav scrolls to an exact card offset, and centring
+     makes mandatory snapping fight those programmatic scrolls. */
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg-raise);
+  overflow: hidden;
+}
+
+/* --- the screen --------------------------------------------------------- */
+
+.crt {
+  --chrome-bar: #000080;
+  --chrome-bar-text: #fff;
+  --chrome-body: #c0c0c0;
+  --chrome-code: #111;
+  --chrome-k: #0000cd;
+  --chrome-s: #a31515;
+  --chrome-c: #007c00;
+  --chrome-n: #7a3e9d;
+  --chrome-f: #111;
+}
+
+.crt__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 8px;
+  background: var(--chrome-bar);
+  color: var(--chrome-bar-text);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+.crt__bar i {
+  font-style: normal;
+  opacity: 0.85;
+  letter-spacing: 0.05em;
+  flex: none;
+}
+.crt__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.crt__code {
+  margin: 0;
+  padding: 16px 18px;
+  background: var(--chrome-body);
+  color: var(--chrome-code);
+  font-size: 11.5px;
+  line-height: 1.62;
+  min-height: 232px;
+  overflow-x: auto;
+  tab-size: 4;
+}
+.crt__code code {
+  font-family: inherit;
+  white-space: pre;
+}
+
+.crt__code .k { color: var(--chrome-k); font-weight: 700; }
+.crt__code .s { color: var(--chrome-s); }
+.crt__code .c { color: var(--chrome-c); font-style: italic; }
+.crt__code .n { color: var(--chrome-n); }
+.crt__code .f { color: var(--chrome-f); font-weight: 700; }
+
+/* Period chrome. The joke is that it modernises as you scroll. */
+
+[data-chrome="dos"] .crt {
+  --chrome-bar: #1d1d1d;
+  --chrome-bar-text: #cfcfcf;
+  --chrome-body: #000;
+  --chrome-code: #d0d0d0;
+  --chrome-k: #fff;
+  --chrome-s: #d0d0d0;
+  --chrome-c: #6f6f6f;
+  --chrome-n: #fff;
+  --chrome-f: #fff;
+}
+
+[data-chrome="ide"] .crt {
+  --chrome-bar: #2d4b7c;
+  --chrome-bar-text: #eef3fb;
+  --chrome-body: #fdfdfd;
+  --chrome-code: #1f1f1f;
+  --chrome-k: #0000ff;
+  --chrome-s: #a31515;
+  --chrome-c: #008000;
+  --chrome-n: #098658;
+  --chrome-f: #795e26;
+}
+
+[data-chrome="neon"] .crt {
+  --chrome-bar: #12151f;
+  --chrome-bar-text: #8892a6;
+  --chrome-body: #06070d;
+  --chrome-code: #c8d0e0;
+  --chrome-k: #22e8ff;
+  --chrome-s: #b6ff3d;
+  --chrome-c: #5b6377;
+  --chrome-n: #ff2bb0;
+  --chrome-f: #9576ff;
+}
+[data-chrome="neon"] .crt__bar i {
+  color: #ff2bb0;
+  font-size: 8px;
+}
+
+/* --- the plaque --------------------------------------------------------- */
+
+.plaque {
+  padding: 20px 22px 22px;
+  border-top: 1px solid var(--line);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.plaque__no {
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--violet);
+  margin: 0 0 10px;
+}
+
+.plaque h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.plaque > p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #a3acbf;
+  margin: 0;
+}
+
+.plaque__tech {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.plaque__tech li {
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 5px 9px;
+}
+
+/* Museum convention: say plainly that the artefact is a reconstruction. */
+/* Two classes, to outrank `.plaque > p { margin: 0 }` — otherwise margin-top:auto
+   never applies and the marks drift with each card's text length. */
+.plaque > .plaque__recon {
+  /* Pinned to the bottom so the mark lines up across cards of differing height. */
+  margin: auto 0 0;
+  padding-top: 14px;
+  font-size: 10.5px;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+}
+
+/* --- strip navigation --------------------------------------------------- */
+
+.strip-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.strip-btn {
+  appearance: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line-strong);
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.strip-btn:hover {
+  border-color: var(--violet);
+  color: var(--violet);
+}
+.strip-btn[disabled] {
+  opacity: 0.3;
+  cursor: default;
+}
+.strip-btn[disabled]:hover {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.strip-hint {
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+@media (max-width: 620px) {
+  .crt__code {
+    font-size: 10.5px;
+    min-height: 200px;
+    padding: 13px 14px;
+  }
+  .strip-hint {
+    display: none;
+  }
+}
+
 /* --- stack -------------------------------------------------------------- */
 
 .stack-group + .stack-group {
@@ -574,6 +833,16 @@ section {
 .chips li:hover {
   border-color: var(--cyan);
   color: var(--cyan);
+}
+
+/* History rows sit back from the current stack without disappearing. */
+.chips--muted li {
+  color: var(--faint);
+  border-style: dashed;
+}
+.chips--muted li:hover {
+  border-color: var(--violet);
+  color: var(--violet);
 }
 
 /* --- archive ------------------------------------------------------------ */

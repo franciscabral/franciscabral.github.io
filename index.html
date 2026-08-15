@@ -245,23 +245,252 @@
     <hr class="rule">
 
     <!-- ================================================================== -->
+    <!-- TIME TRAVEL — the museum                                           -->
+    <!-- ================================================================== -->
+    <section id="museum">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--violet">Time travel</p>
+        <h2>Seven screens, twenty-odd years.</h2>
+        <p class="lede">
+          The tools changed, the job mostly didn't: make the thing work, on time, for
+          people who are waiting. Scroll sideways and watch the chrome catch up.
+        </p>
+      </div>
+
+      <div class="strip-wrap">
+        <div class="strip" id="strip" tabindex="0" role="region" aria-label="Career exhibits, scroll horizontally">
+
+          <!-- 01 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="win9x">
+            <div class="crt">
+              <div class="crt__bar"><span class="crt__title">Locadora.vbp — Microsoft Visual Basic</span><i>_ □ ×</i></div>
+              <pre class="crt__code"><code><span class="k">Private Sub</span> cmdRent_Click()
+    <span class="k">If</span> rsTape!Available = <span class="k">False</span> <span class="k">Then</span>
+        MsgBox <span class="s">"Tape is out."</span>, vbExclamation
+        <span class="k">Exit Sub</span>
+    <span class="k">End If</span>
+    rsRental.AddNew
+    rsRental!MemberID = txtMember.Text
+    rsRental!DueDate  = <span class="k">Date</span> + <span class="n">2</span>
+    rsRental.Update
+<span class="k">End Sub</span></code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 01 · circa 2002</p>
+              <h3>The rental counter</h3>
+              <p>
+                First code at fifteen, and not long after, software a real shop ran on.
+                Inventory, memberships, late fees — and a queue of people who needed it to
+                work right now.
+              </p>
+              <ul class="plaque__tech"><li>VB6</li><li>Access</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
+          <!-- 02 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="dos">
+            <div class="crt">
+              <div class="crt__bar crt__bar--dos"><span class="crt__title">C:\WINNT\system32\cmd.exe</span></div>
+              <pre class="crt__code"><code><span class="c">@echo off</span>
+net use P: \\LAB-SRV\IMAGES /persistent:yes
+ghost -clone,mode=restore,src=P:\lab.gho,dst=<span class="n">1</span> -sure
+ipconfig /release <span class="k">&amp;</span> ipconfig /renew
+<span class="c">REM  36 machines. Class starts at 08:00.</span></code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 02 · circa 2005</p>
+              <h3>Keeping the lab alive</h3>
+              <p>
+                Networks, hardware, disk images. Unglamorous, and the fastest education in
+                how systems actually fail that money can't buy.
+              </p>
+              <ul class="plaque__tech"><li>Batch</li><li>Ghost</li><li>TCP/IP</li><li>Windows Server</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
+          <!-- 03 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="ide">
+            <div class="crt">
+              <div class="crt__bar crt__bar--ide"><span class="crt__title">FareEngine.cs — Visual Studio</span><i>_ □ ×</i></div>
+              <pre class="crt__code"><code><span class="k">public decimal</span> <span class="f">Fare</span>(Trip trip)
+{
+    <span class="k">var</span> rate  = _rates.For(trip.ContractId, trip.StartedAt);
+    <span class="k">var</span> total = rate.Base + (rate.PerKm * trip.Distance);
+
+    <span class="c">// corporate contracts bill net of the negotiated discount</span>
+    <span class="k">return</span> trip.IsCorporate ? total * (<span class="n">1</span> - rate.Discount) : total;
+}</code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 03 · circa 2009</p>
+              <h3>Line-of-business, .NET era</h3>
+              <p>
+                Systems with real money moving through them — mobility, and work for
+                government. Where correctness stops being a matter of taste.
+              </p>
+              <ul class="plaque__tech"><li>C#</li><li>VB.NET</li><li>SQL Server</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
+          <!-- 04 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="ide">
+            <div class="crt">
+              <div class="crt__bar crt__bar--ide"><span class="crt__title">postVendInvoice — AOT \ Jobs</span><i>_ □ ×</i></div>
+              <pre class="crt__code"><code><span class="k">static void</span> <span class="f">postVendInvoice</span>(Args _args)
+{
+    VendInvoiceJour jour;
+    <span class="k">ttsbegin</span>;
+    <span class="k">while select</span> forupdate jour
+        <span class="k">where</span> jour.InvoiceAmount <span class="k">&gt;</span> <span class="n">0</span> <span class="k">&amp;&amp;</span> !jour.Posted
+    {
+        jour.Posted = NoYes::Yes;
+        jour.update();
+    }
+    <span class="k">ttscommit</span>;
+}</code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 04 · circa 2012</p>
+              <h3>ERP, from the inside</h3>
+              <p>
+                Posting routines, vendor invoices, transaction scopes. The first job where
+                a bug and a misstated ledger were the same event.
+              </p>
+              <ul class="plaque__tech"><li>X++</li><li>Dynamics AX</li><li>PL/SQL</li><li>Oracle</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
+          <!-- 05 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="ide">
+            <div class="crt">
+              <div class="crt__bar crt__bar--ide"><span class="crt__title">ue_po_sync.js — SuiteScript 2.0</span><i>_ □ ×</i></div>
+              <pre class="crt__code"><code><span class="f">define</span>([<span class="s">'N/record'</span>], <span class="k">function</span> (record) {
+  <span class="k">function</span> <span class="f">afterSubmit</span>(ctx) {
+    <span class="k">var</span> po = record.load({ type: <span class="s">'purchaseorder'</span>, id: ctx.id });
+    po.setValue({ fieldId: <span class="s">'custbody_ext_id'</span>, value: ctx.extId });
+    po.save();
+  }
+  <span class="k">return</span> { afterSubmit: afterSubmit };
+});</code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 05 · circa 2016</p>
+              <h3>Procurement meets the ledger</h3>
+              <p>
+                A decade of integrations between what a company buys and what it books.
+                Tax, cost centres, payments, purchase orders — and month-end as the exam.
+              </p>
+              <ul class="plaque__tech"><li>SuiteScript</li><li>JavaScript</li><li>REST</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
+          <!-- 06 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="neon">
+            <div class="crt">
+              <div class="crt__bar crt__bar--neon"><span class="crt__title">validate.py</span><i>●&nbsp;●&nbsp;●</i></div>
+              <pre class="crt__code"><code><span class="k">def</span> <span class="f">validate</span>(inv: Invoice) -&gt; <span class="f">list</span>[Finding]:
+    <span class="c"># the invoice can be beautifully extracted and still be wrong</span>
+    <span class="k">if</span> inv.total != <span class="f">sum</span>(l.amount <span class="k">for</span> l <span class="k">in</span> inv.lines):
+        <span class="k">return</span> [Finding(<span class="s">"total_mismatch"</span>, severity=<span class="s">"block"</span>)]
+    <span class="k">return</span> []</code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 06 · circa 2021</p>
+              <h3>Documents, validated</h3>
+              <p>
+                Extraction is the easy half. The work is deciding what to trust, what to
+                escalate, and what must never post unseen.
+              </p>
+              <ul class="plaque__tech"><li>Python</li><li>TypeScript</li><li>MongoDB</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
+          <!-- 07 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="neon">
+            <div class="crt">
+              <div class="crt__bar crt__bar--neon"><span class="crt__title">plane.go</span><i>●&nbsp;●&nbsp;●</i></div>
+              <pre class="crt__code"><code><span class="k">func</span> (p *Plane) <span class="f">Authorize</span>(a Agent, act Action) <span class="k">error</span> {
+    <span class="k">if</span> !p.mandate.Allows(a.Role, act.Kind) {
+        <span class="k">return</span> fmt.Errorf(<span class="s">"agent %s: %w"</span>, a.ID, ErrOutsideMandate)
+    }
+    <span class="k">return</span> p.audit.Record(a, act)
+}</code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 07 · today</p>
+              <h3>The mandate check</h3>
+              <p>
+                Same job as the rental counter, harder stakes: decide what is allowed,
+                record what happened, refuse the rest. Now the operator is an agent.
+              </p>
+              <ul class="plaque__tech"><li>Go</li><li>TypeScript</li><li>MCP</li></ul>
+              <p class="plaque__recon">not a reconstruction</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="strip-nav">
+          <button type="button" class="strip-btn" data-scroll="-1" aria-label="Previous exhibit">←</button>
+          <span class="strip-hint">Drag, scroll or use arrow keys</span>
+          <button type="button" class="strip-btn" data-scroll="1" aria-label="Next exhibit">→</button>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ================================================================== -->
     <!-- STACK                                                              -->
     <!-- ================================================================== -->
     <section id="stack">
       <div class="wrap">
         <p class="eyebrow eyebrow--lime">Stack</p>
         <h2>What I actually reach for.</h2>
+        <p class="lede">
+          The top half is current. The bottom half is where it came from — still useful,
+          because these systems are older than the fashions layered over them.
+        </p>
 
         <div style="margin-top:34px">
           <div class="stack-group">
-            <p class="stack-group__label">Languages</p>
+            <p class="stack-group__label">Languages — now</p>
             <ul class="chips">
               <li>TypeScript</li>
               <li>Go</li>
               <li>Python</li>
               <li>JavaScript</li>
               <li>Kotlin</li>
+              <li>SuiteScript</li>
+            </ul>
+          </div>
+
+          <div class="stack-group">
+            <p class="stack-group__label">Languages — along the way</p>
+            <ul class="chips chips--muted">
+              <li>VB6</li>
+              <li>VB.NET</li>
+              <li>C#</li>
+              <li>X++</li>
+              <li>Batch</li>
+            </ul>
+          </div>
+
+          <div class="stack-group">
+            <p class="stack-group__label">Data</p>
+            <ul class="chips">
               <li>SQL</li>
+              <li>PL/SQL</li>
+              <li>Oracle</li>
+              <li>SQL Server</li>
+              <li>MongoDB</li>
+              <li>Schema design</li>
             </ul>
           </div>
 
@@ -286,6 +515,17 @@
               <li>Prompt catalogues</li>
               <li>Eval &amp; guardrails</li>
               <li>MCP</li>
+            </ul>
+          </div>
+
+          <div class="stack-group">
+            <p class="stack-group__label">Foundations</p>
+            <ul class="chips chips--muted">
+              <li>Networks &amp; TCP/IP</li>
+              <li>Hardware &amp; imaging</li>
+              <li>Windows Server</li>
+              <li>Branch rollouts</li>
+              <li>Dynamics AX</li>
             </ul>
           </div>
 
@@ -396,6 +636,62 @@
   <script src="assets/sketches.js"></script>
   <script>
     Sketches.mountAll();
+
+    /* Museum filmstrip: arrow buttons scroll by one exhibit, and the buttons
+       disable at each end so they never look broken. */
+    (function () {
+      var strip = document.getElementById('strip');
+      if (!strip) return;
+      var buttons = document.querySelectorAll('.strip-btn');
+
+      function cards() {
+        return Array.prototype.slice.call(strip.querySelectorAll('.exhibit'));
+      }
+
+      function padLeft() {
+        return parseFloat(getComputedStyle(strip).paddingLeft) || 0;
+      }
+
+      /* Whichever card currently sits closest to the strip's left content edge. */
+      function currentIndex() {
+        var left = strip.getBoundingClientRect().left + padLeft();
+        var best = 0;
+        var bestDist = Infinity;
+        cards().forEach(function (c, i) {
+          var d = Math.abs(c.getBoundingClientRect().left - left);
+          if (d < bestDist) { bestDist = d; best = i; }
+        });
+        return best;
+      }
+
+      function go(dir) {
+        var list = cards();
+        var i = Math.max(0, Math.min(list.length - 1, currentIndex() + dir));
+        var delta = list[i].getBoundingClientRect().left
+          - strip.getBoundingClientRect().left - padLeft();
+        strip.scrollTo({ left: strip.scrollLeft + delta, behavior: 'smooth' });
+      }
+
+      function sync() {
+        var i = currentIndex();
+        var last = cards().length - 1;
+        var max = strip.scrollWidth - strip.clientWidth - 2;
+        buttons.forEach(function (b) {
+          var dir = parseInt(b.dataset.scroll, 10);
+          b.disabled = dir < 0 ? i <= 0 : (i >= last || strip.scrollLeft >= max);
+        });
+      }
+
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () {
+          go(parseInt(b.dataset.scroll, 10));
+        });
+      });
+
+      strip.addEventListener('scroll', sync, { passive: true });
+      window.addEventListener('resize', sync);
+      sync();
+    })();
   </script>
 </body>
 

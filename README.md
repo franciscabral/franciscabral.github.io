@@ -55,6 +55,26 @@ never resolves, `setup()` never runs, and the page stays blank. The arcade's
 Life Game has no external dependency — its patterns are inline — so it always
 runs.
 
+## The museum
+
+The "Time travel" section on the landing page is a horizontal filmstrip of
+seven exhibits, one per era, each showing a code snippet in period-correct
+window chrome — VB6 grey, DOS black, Visual Studio blue, then the site's own
+neon. Chrome is picked with `data-chrome` on the exhibit (`win9x`, `dos`,
+`ide`, `neon`), which swaps a set of CSS custom properties.
+
+**The code in exhibits 01–06 is reconstruction, not recovered source**, and
+each plaque says so. Exhibit 07 is the only one marked otherwise.
+
+Two things worth knowing before editing it:
+
+- Cards use `scroll-snap-align: start`, not `center`. With `center`, mandatory
+  snapping fights the nav buttons' programmatic scroll and the strip barely
+  moves.
+- The strip rests at `scrollLeft == the gutter padding`, not `0`, so the arrow
+  buttons decide their disabled state from the current card index rather than
+  from a raw `scrollLeft <= 0` test.
+
 ## The landing page
 
 `assets/sketches.js` re-implements the four games in plain 2D canvas for the
