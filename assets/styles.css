@@ -699,6 +699,52 @@ section {
   font-size: 8px;
 }
 
+/* --- testimonial card --------------------------------------------------- */
+
+.exhibit--quote {
+  border-color: color-mix(in srgb, var(--lime) 30%, transparent);
+}
+
+.quote {
+  position: relative;
+  padding: 26px 26px 22px;
+  min-height: 232px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  background:
+    radial-gradient(120% 100% at 20% 0%, rgba(182, 255, 61, 0.08), transparent 62%),
+    var(--bg);
+}
+
+.quote__mark {
+  position: absolute;
+  top: 2px;
+  left: 18px;
+  margin: 0;
+  font-size: 66px;
+  line-height: 1;
+  color: color-mix(in srgb, var(--lime) 34%, transparent);
+}
+
+.quote__pt {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.quote__en {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--faint);
+  font-style: italic;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
 /* --- the plaque --------------------------------------------------------- */
 
 .plaque {
