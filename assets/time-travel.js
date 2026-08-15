@@ -10,6 +10,8 @@
   if (!monitor || !chapters.length || !scenes.length) return;
 
   var activeId = '';
+  var activeIndex = 0;
+  var frame = 0;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function activate(id) {
@@ -21,6 +23,7 @@
     if (!chapter) return;
 
     activeId = id;
+    activeIndex = chapters.indexOf(chapter);
     monitor.dataset.era = chapter.dataset.monitorEra;
     if (eraLabel) eraLabel.textContent = chapter.dataset.eraLabel;
 
@@ -50,23 +53,46 @@
         behavior: reduceMotion ? 'auto' : 'smooth',
         block: 'center'
       });
-      activate(button.dataset.timeTarget);
+      if (reduceMotion) activate(button.dataset.timeTarget);
     });
   });
 
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      var visible = entries.filter(function (entry) { return entry.isIntersecting; });
-      if (!visible.length) return;
-      visible.sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; });
-      activate(visible[0].target.dataset.timeScene);
-    }, {
-      rootMargin: '-28% 0px -42% 0px',
-      threshold: [0, .2, .5, .8]
-    });
+  /* Always compare every chapter against the same viewport anchor. The old
+     IntersectionObserver compared only entries in each callback, which let
+     adjacent chapters briefly reactivate each other at mobile boundaries. */
+  function selectCurrentChapter(force) {
+    frame = 0;
 
-    chapters.forEach(function (chapter) { observer.observe(chapter); });
+    var anchor = window.innerHeight * (window.innerWidth <= 900 ? .68 : .5);
+    var distances = chapters.map(function (chapter) {
+      var rect = chapter.getBoundingClientRect();
+      return Math.abs(rect.top + rect.height / 2 - anchor);
+    });
+    var candidateIndex = distances.indexOf(Math.min.apply(Math, distances));
+
+    if (!activeId || force) {
+      activate(chapters[candidateIndex].dataset.timeScene);
+      return;
+    }
+
+    if (candidateIndex === activeIndex) return;
+
+    /* A new chapter must be clearly closer than the current one. This small
+       dead zone absorbs touch-scroll bounce and fractional mobile pixels. */
+    var hysteresis = window.innerWidth <= 900 ? 42 : 24;
+    if (distances[candidateIndex] + hysteresis < distances[activeIndex]) {
+      activate(chapters[candidateIndex].dataset.timeScene);
+    }
   }
 
-  activate(chapters[0].dataset.timeScene);
+  function scheduleSelection() {
+    if (frame) return;
+    frame = window.requestAnimationFrame(function () {
+      selectCurrentChapter(false);
+    });
+  }
+
+  window.addEventListener('scroll', scheduleSelection, { passive: true });
+  window.addEventListener('resize', scheduleSelection);
+  selectCurrentChapter(true);
 })();
