@@ -481,16 +481,21 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
           <!-- 04 ------------------------------------------------------- -->
           <article class="exhibit" data-chrome="ide">
             <div class="crt">
-              <div class="crt__bar crt__bar--ide"><span class="crt__title">postVendInvoice — AOT \ Jobs</span><i>_ □ ×</i></div>
-              <pre class="crt__code"><code><span class="k">static void</span> <span class="f">postVendInvoice</span>(Args _args)
+              <div class="crt__bar crt__bar--ide"><span class="crt__title">CustVendCreatePaymJournal_Cust_MSBS — AOT \ Classes</span><i>_ □ ×</i></div>
+              <pre class="crt__code"><code><span class="k">void</span> <span class="f">updateLines</span>(LedgerJournalId _journalId, EnrollId_MSBS _enrollId,
+                 CompanyBankAccountId _bankAccountId)
 {
-    VendInvoiceJour jour;
+    LedgerJournalTrans  ledgerJournalTrans;
+    ;
+
     <span class="k">ttsbegin</span>;
-    <span class="k">while select</span> forupdate jour
-        <span class="k">where</span> jour.InvoiceAmount <span class="k">&gt;</span> <span class="n">0</span> <span class="k">&amp;&amp;</span> !jour.Posted
+    <span class="k">while select</span> forupdate ledgerJournalTrans
+        <span class="k">where</span> ledgerJournalTrans.JournalNum == _journalId
     {
-        jour.Posted = NoYes::Yes;
-        jour.update();
+        ledgerJournalTrans.EnrollId_MSBS = _enrollId;
+        ledgerJournalTrans.OffsetAccountType = LedgerJournalACType::Bank;
+        ledgerJournalTrans.OffsetAccount = _bankAccountId;
+        ledgerJournalTrans.update();
     }
     <span class="k">ttscommit</span>;
 }</code></pre>
@@ -499,12 +504,14 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
               <p class="plaque__no">Exhibit 06 · 2009–13</p>
               <h3>ERP, from the inside</h3>
               <p>
-                Dynamics AX from 4.0 onward. Posting routines, vendor invoices, transaction
+                Dynamics AX from 4.0 onward. Payment journals, posting routines, transaction
                 scopes — the first job where a bug and a misstated ledger were the same
-                event.
+                event. The code on this screen is mine, recovered from a backup of the
+                machine I wrote it on: October 2010, doc comments in Portuguese, work-item
+                tags in the margins.
               </p>
               <ul class="plaque__tech"><li>X++</li><li>Dynamics AX 4.0</li><li>PL/SQL</li><li>Oracle</li></ul>
-              <p class="plaque__recon">reconstruction</p>
+              <p class="plaque__recon">verbatim, 2010 · signature wrapped to fit</p>
             </div>
           </article>
 
