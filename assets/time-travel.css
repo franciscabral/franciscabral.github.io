@@ -32,9 +32,12 @@
   --tm-bezel-bottom: clamp(24px, 3vw, 36px);
   --tm-radius: 34px;
   --tm-ratio: 16 / 9;
+  --tm-model-width: 76.3%;
   --tm-screen-radius: 22px;
   --tm-scan: .22;
+  position: relative;
   width: min(100%, 840px);
+  aspect-ratio: 840 / 558;
   transform: perspective(1200px) rotateX(.4deg);
   transition: transform .8s ease;
   filter: drop-shadow(0 28px 34px rgba(0,0,0,.38));
@@ -42,6 +45,9 @@
 
 .tm-monitor__shell {
   position: relative;
+  width: var(--tm-model-width);
+  height: 90.76%;
+  margin-inline: auto;
   padding: var(--tm-bezel-top) var(--tm-bezel-x) var(--tm-bezel-bottom);
   border: 1px solid color-mix(in srgb, var(--tm-shell) 76%, white);
   border-radius: var(--tm-radius);
@@ -57,7 +63,8 @@
 
 .tm-monitor__screen {
   position: relative;
-  aspect-ratio: var(--tm-ratio);
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   container-type: inline-size;
   border: 3px solid rgba(0,0,0,.8);
@@ -112,18 +119,26 @@
 }
 
 .tm-monitor__neck {
+  position: absolute;
+  top: 90.4%;
+  left: 50%;
   width: 28%;
-  height: clamp(22px, 3.5vw, 41px);
-  margin: -2px auto 0;
+  height: 7.35%;
+  margin: 0;
+  transform: translateX(-50%);
   background: linear-gradient(90deg, var(--tm-shell-dark), var(--tm-shell) 38% 62%, var(--tm-shell-dark));
   clip-path: polygon(25% 0,75% 0,92% 100%,8% 100%);
   transition: background .8s ease;
 }
 
 .tm-monitor__base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
   width: 32%;
-  height: clamp(8px, 1.1vw, 13px);
-  margin: -1px auto 0;
+  height: 2.33%;
+  margin: 0;
+  transform: translateX(-50%);
   border-radius: 50% 50% 18% 18%;
   background: linear-gradient(var(--tm-shell), var(--tm-shell-dark));
   box-shadow: 0 10px 18px rgba(0,0,0,.35);
@@ -134,6 +149,7 @@
 .tm-monitor[data-era="crt-dark"] {
   --tm-shell: #4b4b47;
   --tm-shell-dark: #222422;
+  --tm-model-width: 76.3%;
   --tm-radius: 28px;
   --tm-screen-radius: 18px;
 }
@@ -141,6 +157,7 @@
 .tm-monitor[data-era="lcd-square"] {
   --tm-shell: #6c7075;
   --tm-shell-dark: #34383d;
+  --tm-model-width: 72%;
   --tm-radius: 16px;
   --tm-screen-radius: 5px;
   --tm-scan: .08;
@@ -149,6 +166,7 @@
 .tm-monitor[data-era="lcd"] {
   --tm-shell: #444950;
   --tm-shell-dark: #202329;
+  --tm-model-width: 90.5%;
   --tm-radius: 13px;
   --tm-screen-radius: 3px;
   --tm-scan: .035;
@@ -158,6 +176,7 @@
 .tm-monitor[data-era="wide-dark"] {
   --tm-shell: #252a31;
   --tm-shell-dark: #0f1216;
+  --tm-model-width: 100%;
   --tm-radius: 10px;
   --tm-screen-radius: 2px;
   --tm-scan: 0;
@@ -172,6 +191,7 @@
 .tm-monitor[data-era="future"] {
   --tm-shell: #121722;
   --tm-shell-dark: #05070b;
+  --tm-model-width: 100%;
   --tm-radius: 7px;
   --tm-screen-radius: 1px;
   --tm-scan: 0;
@@ -549,8 +569,6 @@
 
   .tm__stage-inner { min-height: auto; }
   .tm-monitor { width: min(100%, 660px) !important; }
-  .tm-monitor__neck { height: 22px !important; }
-  .tm-monitor__base { height: 8px !important; }
   .tm-controls { width: min(94%, 620px); margin-top: 14px; }
 
   .tm__rail { margin-top: 0; }
@@ -573,8 +591,6 @@
   .tm-monitor__shell { --tm-bezel-x: 7px; --tm-bezel-top: 7px; --tm-bezel-bottom: 17px; }
   .tm-monitor__brand { left: 9px; right: 9px; bottom: 4px; font-size: 6px; }
   .tm-monitor__brand i { width: 5px; height: 5px; }
-  .tm-monitor__neck { height: 13px !important; }
-  .tm-monitor__base { height: 6px !important; }
   .tm-scene { font-size: clamp(5.4px, 1.8cqw, 8px); }
   .tm-window--code { inset: 4% 17% 14% 2%; }
   .tm-window--story { right: 2%; bottom: 9%; width: 67%; max-height: 84%; }
