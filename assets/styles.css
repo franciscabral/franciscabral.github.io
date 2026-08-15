@@ -464,6 +464,81 @@ section {
   margin: 0;
 }
 
+/* --- how I got here ----------------------------------------------------- */
+
+/* The arc of the career, as four beats with connectors between them. */
+.arc {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 0;
+  margin: 26px 0 34px;
+}
+
+.arc span {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+}
+
+.arc span:last-child {
+  color: var(--lime);
+  border-color: color-mix(in srgb, var(--lime) 40%, transparent);
+  background: color-mix(in srgb, var(--lime) 8%, transparent);
+}
+
+.arc span + span::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: var(--line-strong);
+  vertical-align: middle;
+  margin: 0 14px 0 -14px;
+}
+
+/* Two columns of body copy on desktop; the measure stays readable. */
+.prose {
+  columns: 2;
+  column-gap: 46px;
+  max-width: 900px;
+}
+
+.prose p {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #a9b2c4;
+  margin: 0 0 16px;
+  /* Never split a paragraph across the column break. */
+  break-inside: avoid;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+  color: #c3cade;
+}
+
+@media (max-width: 760px) {
+  .prose {
+    columns: 1;
+  }
+  .arc span + span::before {
+    display: none;
+  }
+  .arc span + span {
+    margin-left: 0;
+  }
+  .arc {
+    gap: 8px;
+  }
+}
+
 /* --- stack -------------------------------------------------------------- */
 
 .stack-group + .stack-group {
