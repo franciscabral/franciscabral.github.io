@@ -541,6 +541,29 @@ section {
 
 /* --- time travel / the museum ------------------------------------------- */
 
+/* The joke that named the section, sitting on top of it. */
+.epigraph {
+  margin: 26px 0 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--lime);
+  max-width: 52ch;
+}
+
+.epigraph blockquote {
+  margin: 0;
+  font-size: clamp(16px, 2vw, 19px);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.epigraph figcaption {
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
 .strip-wrap {
   margin-top: 38px;
 }
