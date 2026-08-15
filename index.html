@@ -353,11 +353,41 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
               <p class="plaque__no">Exhibit 02 · circa 2005</p>
               <h3>Keeping the lab alive</h3>
               <p>
-                Networks, hardware, disk images, thirty-six machines and a class starting
-                at eight. Unglamorous, and the fastest education in how systems actually
+                Straight out of the technician's diploma at SENAI: networks, hardware, disk
+                images, thirty-six machines and a class starting at eight. Unglamorous, and the fastest education in how systems actually
                 fail that money can't buy.
               </p>
               <ul class="plaque__tech"><li>Batch</li><li>Ghost</li><li>TCP/IP</li><li>Windows Server</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
+          <!-- 03c · Siemens -------------------------------------------- -->
+          <article class="exhibit" data-chrome="unix">
+            <div class="crt">
+              <div class="crt__bar"><span class="crt__title">root@sunfire — Solaris 8 (SPARC)</span><i>80x24</i></div>
+              <pre class="crt__code"><code><span class="c"># the link dropped again at 03:14. nobody was awake.</span>
+bash-2.03<span class="k">#</span> ifconfig -a
+bash-2.03<span class="k">#</span> netstat -rn | grep default
+bash-2.03<span class="k">#</span> snoop -d hme0 | head -<span class="n">20</span>
+
+<span class="c"># patch it, prove it, then make it never page anyone again</span>
+bash-2.03<span class="k">#</span> patchadd -M /var/spool/patch
+bash-2.03<span class="k">#</span> /etc/init.d/sshd start</code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 03 · 2006–09</p>
+              <h3>The Siemens years</h3>
+              <p>
+                Advanced network engineering at Siemens — carrier and enterprise
+                infrastructure on Solaris 8 SPARC, where a link that drops at three in the
+                morning is somebody's production outage by nine.
+              </p>
+              <p class="plaque__then">
+                Long before anything was "cloud", this is where I learned that a system you
+                cannot observe is a system you do not actually operate.
+              </p>
+              <ul class="plaque__tech"><li>Solaris 8 / SPARC</li><li>Telecom infrastructure</li><li>TCP/IP</li><li>Unix</li></ul>
               <p class="plaque__recon">reconstruction</p>
             </div>
           </article>
@@ -378,7 +408,7 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
 <span class="k">end</span>.</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 03 · circa 2007</p>
+              <p class="plaque__no">Exhibit 04 · circa 2007</p>
               <h3>Algorithms, and two trophies</h3>
               <p>
                 Pascal and C, written to test algorithms and then taken to the university
@@ -411,35 +441,6 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
               </p>
               <ul class="plaque__tech"><li>LinkedIn recommendation</li></ul>
               <p class="plaque__recon">verbatim · name withheld</p>
-            </div>
-          </article>
-
-          <!-- 03c · Siemens -------------------------------------------- -->
-          <article class="exhibit" data-chrome="unix">
-            <div class="crt">
-              <div class="crt__bar"><span class="crt__title">fcabral@sunfire — /export/home</span><i>80x24</i></div>
-              <pre class="crt__code"><code><span class="c"># the aggregate flapped again at 03:14. nobody was awake.</span>
-$ dladm show-aggr -L
-$ netstat -rn | grep default
-$ snoop -d aggr1 port 1521 | head -<span class="n">20</span>
-
-<span class="c"># find it, prove it, then make it never page anyone again</span>
-$ svcadm restart svc:/network/physical:default</code></pre>
-            </div>
-            <div class="plaque">
-              <p class="plaque__no">Exhibit 04 · 2006–09</p>
-              <h3>The Siemens years</h3>
-              <p>
-                Advanced network engineering at Siemens — enterprise infrastructure on
-                Solaris, where a link that flaps at three in the morning is somebody's
-                production outage by nine.
-              </p>
-              <p class="plaque__then">
-                Long before anything was "cloud", this is where I learned that a system you
-                cannot observe is a system you do not actually operate.
-              </p>
-              <ul class="plaque__tech"><li>Solaris</li><li>Enterprise networks</li><li>TCP/IP</li><li>Unix</li></ul>
-              <p class="plaque__recon">reconstruction</p>
             </div>
           </article>
 
