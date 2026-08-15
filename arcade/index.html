@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcade — franciscabral</title>
+  <meta name="description" content="A p5.js arcade cabinet: Snake, Breakout, Star Travel and Life Game, playable in the browser.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#05060a">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2305060a'/><path d='M9 23V9h13' stroke='%2322e8ff' stroke-width='3.4' fill='none'/><path d='M9 16h9' stroke='%23ff2bb0' stroke-width='3.4' fill='none'/></svg>">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/arcade.css">
+</head>
+
+<body>
+  <main class="arcade-page">
+    <div class="wrap">
+
+      <div class="arcade-head">
+        <p class="eyebrow eyebrow--magenta" style="justify-content:center">Insert coin</p>
+        <h1>The arcade.</h1>
+        <p>
+          Four p5.js sketches, rebuilt as things you can actually play. Pick a slot, use
+          the keyboard or the panel below, and the machine does the rest.
+        </p>
+      </div>
+
+      <!-- ================================================================ -->
+      <!-- THE CABINET                                                      -->
+      <!-- ================================================================ -->
+      <div class="cabinet">
+
+        <div class="marquee">
+          <div class="marquee__title">FRANCISCABRAL</div>
+          <div class="marquee__sub">p5 · arcade · est. 2021</div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen" id="screen">
+            <div class="screen__boot" id="boot">
+              <h2>READY PLAYER ONE</h2>
+              <p>Select a game below</p>
+            </div>
+            <div class="screen__glass"></div>
+          </div>
+        </div>
+
+        <div class="slots" id="slots"></div>
+        <p class="now-playing" id="nowPlaying">No game loaded.</p>
+
+        <div class="panel">
+          <div class="stick" id="stick" aria-hidden="true">
+            <div class="stick__dish"></div>
+            <div class="stick__shaft"></div>
+            <div class="stick__ball"></div>
+          </div>
+
+          <div class="buttons">
+            <button class="abtn" id="btnFire" style="--btn:#ff2bb0" type="button"
+              title="Action / start / pause">FIRE</button>
+            <button class="abtn" id="btnReset" style="--btn:#b6ff3d" type="button"
+              title="Restart the current game">RESET</button>
+          </div>
+        </div>
+
+        <div class="touch-pad" id="touchPad">
+          <span class="spacer"></span>
+          <button type="button" data-dir="up" aria-label="Up">▲</button>
+          <span class="spacer"></span>
+          <button type="button" data-dir="left" aria-label="Left">◀</button>
+          <button type="button" data-dir="down" aria-label="Down">▼</button>
+          <button type="button" data-dir="right" aria-label="Right">▶</button>
+        </div>
+
+        <div class="coin">
+          <i></i> Free play <i></i>
+        </div>
+      </div>
+
+      <div class="controls-note">
+        <div>
+          <h3>Keyboard</h3>
+          <p id="controlsText">Pick a game to see its controls.</p>
+        </div>
+        <div>
+          <h3>Cabinet</h3>
+          <p>
+            The joystick and FIRE button drive whichever game is loaded. On a phone the
+            D-pad appears under the panel.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:34px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn--ghost" href="../"><span aria-hidden="true">←</span> Home</a>
+        <a class="btn btn--ghost" href="../archive/">Original sketches</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer__row">
+      <span>franciscabral.github.io / arcade</span>
+      <span><a href="../">Home</a></span>
+    </div>
+  </footer>
+
+  <script src="../vendor/p5.min.js"></script>
+  <script src="../assets/games.js"></script>
+  <script src="../assets/cabinet.js"></script>
+</body>
+
+</html>

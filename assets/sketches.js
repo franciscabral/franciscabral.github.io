@@ -74,7 +74,7 @@
 
   /* StarTravel — warp-speed starfield. */
   RENDERERS.stars = function (opts) {
-    var count = opts.density === 'low' ? 140 : 420;
+    var count = opts.density === 'low' ? 260 : 420;
     var speed = opts.speed || 12;
 
     return {
@@ -320,105 +320,107 @@
     }
   };
 
-  /* RhythmStyle — four lanes of arrows falling onto a judgement line. */
-  RENDERERS.rhythm = function (opts) {
-    var LANES = 4;
-    var speed = opts.speed || 190;            // px per second
+  /* Breakout — plays itself: the paddle tracks the ball and never quite loses. */
+  RENDERERS.breakout = function (opts) {
+    var ROWS = opts.density === 'low' ? 4 : 5;
+    var COLS = opts.density === 'low' ? 7 : 10;
 
     return {
       fps: 60,
-      warmup: 150,
+      warmup: 120,
       init: function (s) {
-        s.notes = [];
-        s.flash = [0, 0, 0, 0];
-        s.spawnIn = 0;
-      },
-      step: function (s, dt) {
-        var line = s.h * 0.82;
+        var pad = 4;
+        var top = Math.max(8, s.h * 0.08);
+        var bw = (s.w - pad * (COLS + 1)) / COLS;
+        var bh = Math.max(5, s.h * 0.045);
 
-        s.spawnIn -= dt;
-        if (s.spawnIn <= 0) {
-          s.notes.push({ lane: (Math.random() * LANES) | 0, y: -20 });
-          s.spawnIn = 0.24 + Math.random() * 0.34;
-        }
-
-        for (var i = s.notes.length - 1; i >= 0; i--) {
-          var n = s.notes[i];
-          n.y += speed * dt;
-          if (n.y >= line) {
-            s.flash[n.lane] = 1;
-            s.notes.splice(i, 1);
+        s.bricks = [];
+        for (var r = 0; r < ROWS; r++) {
+          for (var c = 0; c < COLS; c++) {
+            s.bricks.push({
+              x: pad + c * (bw + pad),
+              y: top + r * (bh + pad),
+              w: bw,
+              h: bh,
+              alive: 1,
+              row: r
+            });
           }
         }
 
-        for (var l = 0; l < LANES; l++) {
-          s.flash[l] = Math.max(0, s.flash[l] - dt * 3.2);
+        s.paddleW = Math.max(34, s.w * 0.18);
+        s.paddleX = s.w / 2;
+        s.paddleY = s.h - Math.max(12, s.h * 0.07);
+        var sp = Math.max(2.4, s.w * 0.006);
+        s.ball = { x: s.w / 2, y: s.h * 0.6, r: Math.max(2.2, s.w * 0.008), vx: sp * 0.7, vy: -sp };
+      },
+      resize: function (s) {
+        this.init(s);
+      },
+      step: function (s) {
+        var b = s.ball;
+
+        // Paddle chases the ball with a lag, so the rally looks played, not solved.
+        s.paddleX += (b.x - s.paddleX) * 0.09;
+        s.paddleX = Math.max(s.paddleW / 2, Math.min(s.w - s.paddleW / 2, s.paddleX));
+
+        b.x += b.vx;
+        b.y += b.vy;
+
+        if (b.x - b.r < 0) { b.x = b.r; b.vx *= -1; }
+        if (b.x + b.r > s.w) { b.x = s.w - b.r; b.vx *= -1; }
+        if (b.y - b.r < 0) { b.y = b.r; b.vy *= -1; }
+
+        if (b.vy > 0 && b.y + b.r >= s.paddleY &&
+            b.y - b.r <= s.paddleY + 5 &&
+            b.x >= s.paddleX - s.paddleW / 2 - b.r &&
+            b.x <= s.paddleX + s.paddleW / 2 + b.r) {
+          var rel = Math.max(-1, Math.min(1, (b.x - s.paddleX) / (s.paddleW / 2)));
+          var speed = Math.sqrt(b.vx * b.vx + b.vy * b.vy);
+          var angle = rel * (Math.PI / 3);
+          b.vx = speed * Math.sin(angle);
+          b.vy = -speed * Math.cos(angle);
+          b.y = s.paddleY - b.r - 1;
         }
+
+        for (var i = 0; i < s.bricks.length; i++) {
+          var k = s.bricks[i];
+          if (!k.alive) continue;
+          if (b.x + b.r < k.x || b.x - b.r > k.x + k.w ||
+              b.y + b.r < k.y || b.y - b.r > k.y + k.h) continue;
+          k.alive = 0;
+          var ox = Math.min(b.x + b.r - k.x, k.x + k.w - (b.x - b.r));
+          var oy = Math.min(b.y + b.r - k.y, k.y + k.h - (b.y - b.r));
+          if (ox < oy) b.vx *= -1; else b.vy *= -1;
+          break;
+        }
+
+        var left = 0;
+        for (var j = 0; j < s.bricks.length; j++) left += s.bricks[j].alive;
+        if (!left || b.y - b.r > s.h) this.init(s);
       },
       draw: function (s) {
         var ctx = s.ctx;
         ctx.fillStyle = PALETTE.bg;
         ctx.fillRect(0, 0, s.w, s.h);
 
-        var laneW = s.w / LANES;
-        var line = s.h * 0.82;
-        var size = Math.min(laneW * 0.34, 22);
-
-        // Lane guides.
-        ctx.strokeStyle = 'rgba(255,255,255,0.05)';
-        ctx.lineWidth = 1;
-        for (var l = 1; l < LANES; l++) {
-          ctx.beginPath();
-          ctx.moveTo(l * laneW, 0);
-          ctx.lineTo(l * laneW, s.h);
-          ctx.stroke();
+        var ROW_COLOURS = [PALETTE.magenta, PALETTE.violet, PALETTE.cyan, PALETTE.lime, PALETTE.cyan];
+        for (var i = 0; i < s.bricks.length; i++) {
+          var k = s.bricks[i];
+          if (!k.alive) continue;
+          ctx.fillStyle = rgba(ROW_COLOURS[k.row % ROW_COLOURS.length], 0.78);
+          ctx.fillRect(k.x, k.y, k.w, k.h);
         }
 
-        // Judgement line, brightened by recent hits.
-        var heat = Math.max.apply(null, s.flash);
-        ctx.strokeStyle = rgba(PALETTE.violet, 0.25 + heat * 0.7);
-        ctx.lineWidth = 1 + heat * 2;
+        ctx.fillStyle = rgba(PALETTE.cyan, 0.95);
+        ctx.fillRect(s.paddleX - s.paddleW / 2, s.paddleY, s.paddleW, Math.max(3, s.h * 0.018));
+
+        ctx.fillStyle = 'rgba(233,237,246,0.98)';
         ctx.beginPath();
-        ctx.moveTo(0, line);
-        ctx.lineTo(s.w, line);
-        ctx.stroke();
-
-        // Receptors.
-        for (var r = 0; r < LANES; r++) {
-          drawArrow(ctx, (r + 0.5) * laneW, line, size, r, rgba(PALETTE.violet, 0.2 + s.flash[r] * 0.8), true);
-        }
-
-        // Falling notes.
-        for (var i = 0; i < s.notes.length; i++) {
-          var n = s.notes[i];
-          var colour = n.lane % 2 === 0 ? PALETTE.cyan : PALETTE.magenta;
-          var fade = Math.min(1, n.y / (s.h * 0.25));
-          drawArrow(ctx, (n.lane + 0.5) * laneW, n.y, size, n.lane, rgba(colour, 0.25 + fade * 0.75), false);
-        }
-      }
-    };
-
-    /* lane 0 left, 1 down, 2 up, 3 right — the original sketch's order. */
-    function drawArrow(ctx, cx, cy, size, lane, style, hollow) {
-      var rot = [Math.PI / 2, 0, Math.PI, -Math.PI / 2][lane];
-      ctx.save();
-      ctx.translate(cx, cy);
-      ctx.rotate(rot);
-      ctx.beginPath();
-      ctx.moveTo(0, size);
-      ctx.lineTo(-size * 0.85, -size * 0.6);
-      ctx.lineTo(size * 0.85, -size * 0.6);
-      ctx.closePath();
-      if (hollow) {
-        ctx.strokeStyle = style;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-      } else {
-        ctx.fillStyle = style;
+        ctx.arc(s.ball.x, s.ball.y, s.ball.r, 0, Math.PI * 2);
         ctx.fill();
       }
-      ctx.restore();
-    }
+    };
   };
 
   /* ---------------------------------------------------------------------- *

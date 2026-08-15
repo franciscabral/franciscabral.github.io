@@ -48,7 +48,7 @@
     <div class="mosaic" aria-hidden="true">
       <canvas data-sketch="stars" data-speed="11"></canvas>
       <canvas data-sketch="life"></canvas>
-      <canvas data-sketch="rhythm"></canvas>
+      <canvas data-sketch="breakout"></canvas>
       <canvas data-sketch="snake"></canvas>
     </div>
     <div class="scanlines" aria-hidden="true"></div>
@@ -266,51 +266,54 @@
     <!-- ================================================================== -->
     <section id="arcade">
       <div class="wrap">
-        <p class="eyebrow eyebrow--magenta">The arcade — archived</p>
+        <p class="eyebrow eyebrow--magenta">The arcade</p>
         <h2>Where this domain started.</h2>
         <p class="lede" style="margin-bottom:38px">
-          Four p5.js sketches from an earlier life of this repo. They're kept exactly as
-          they were written, still playable. The tiles below — and the ones drifting behind
-          the header — are dependency-free canvas re-cuts of them.
+          This repo started as p5.js sketches. They now live in a cabinet you can actually
+          play — Snake and Breakout for score, Star Travel and Life Game to poke at. The
+          tiles below, and the ones drifting behind the header, are canvas re-cuts of them.
         </p>
 
         <div class="grid grid--4">
-          <a class="sketch-card" href="archive/StarTravel/index.html">
+          <a class="sketch-card" href="arcade/#stars">
             <canvas data-sketch="stars" data-density="low" data-speed="9" aria-hidden="true"></canvas>
             <div class="sketch-card__body">
               <h3>Star Travel</h3>
-              <p>Viagem nas Estrelas — perspective-projected warp starfield.</p>
+              <p>Steer the warp with the mouse, hold to burn.</p>
             </div>
           </a>
 
-          <a class="sketch-card" href="archive/LifeGame/index.html">
+          <a class="sketch-card" href="arcade/#life">
             <canvas data-sketch="life" data-density="low" aria-hidden="true"></canvas>
             <div class="sketch-card__body">
               <h3>Life Game</h3>
-              <p>Jogo da Vida — Conway's cellular automaton on a torus.</p>
+              <p>Conway's automaton — paint your own soup and run it.</p>
             </div>
           </a>
 
-          <a class="sketch-card" href="archive/RhythmStyle/index.html">
-            <canvas data-sketch="rhythm" data-density="low" aria-hidden="true"></canvas>
+          <a class="sketch-card" href="arcade/#breakout">
+            <canvas data-sketch="breakout" data-density="low" aria-hidden="true"></canvas>
             <div class="sketch-card__body">
-              <h3>Rhythm Style</h3>
-              <p>Four lanes, falling arrows, a judgement line. Use the arrow keys.</p>
+              <h3>Breakout</h3>
+              <p>Clear the wall. The paddle angle is the whole game.</p>
             </div>
           </a>
 
-          <a class="sketch-card" href="archive/Snake/index.html">
+          <a class="sketch-card" href="arcade/#snake">
             <canvas data-sketch="snake" data-density="low" aria-hidden="true"></canvas>
             <div class="sketch-card__body">
               <h3>Snake</h3>
-              <p>Cobrinha — the classic, on a 20px grid.</p>
+              <p>Cobrinha — walls kill, speed ramps, bonus fruit.</p>
             </div>
           </a>
         </div>
 
         <div style="margin-top:20px">
-          <a class="card__link" href="archive/" style="--accent: var(--magenta)">
-            Open the full archive <span aria-hidden="true">→</span>
+          <a class="card__link" href="arcade/" style="--accent: var(--magenta)">
+            Enter the arcade <span aria-hidden="true">→</span>
+          </a>
+          <a class="card__link" href="archive/" style="--accent: var(--faint); margin-left:26px">
+            Original sketches <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
