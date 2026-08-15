@@ -466,41 +466,145 @@ section {
 
 /* --- how I got here ----------------------------------------------------- */
 
-/* The arc of the career, as four beats with connectors between them. */
-.arc {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 0;
-  margin: 26px 0 34px;
+/* A six-frame neon reel: the same career arc, but told as pictures. */
+.neon-reel {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin: 30px 0 42px;
 }
 
-.arc span {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--dim);
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  padding: 8px 14px;
-  background: rgba(255, 255, 255, 0.02);
-  white-space: nowrap;
-}
-
-.arc span:last-child {
-  color: var(--lime);
-  border-color: color-mix(in srgb, var(--lime) 40%, transparent);
-  background: color-mix(in srgb, var(--lime) 8%, transparent);
-}
-
-.arc span + span::before {
+.neon-reel::before {
   content: "";
-  display: inline-block;
-  width: 18px;
+  position: absolute;
+  z-index: -1;
+  top: 55px;
+  left: 7%;
+  right: 7%;
   height: 1px;
-  background: var(--line-strong);
-  vertical-align: middle;
-  margin: 0 14px 0 -14px;
+  background: linear-gradient(90deg, var(--magenta), var(--cyan), var(--violet), var(--lime));
+  box-shadow: 0 0 12px rgba(34, 232, 255, 0.35);
+  opacity: 0.34;
+}
+
+.neon-scene {
+  --neon: var(--cyan);
+  margin: 0;
+  min-width: 0;
+  padding: 12px 10px 11px;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background:
+    radial-gradient(100% 85% at 50% 32%, color-mix(in srgb, var(--neon) 8%, transparent), transparent 70%),
+    rgba(5, 6, 10, 0.88);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.neon-scene svg {
+  display: block;
+  width: 100%;
+  max-height: 94px;
+  overflow: visible;
+  transition: transform 0.24s ease;
+}
+
+.neon-line,
+.neon-hot {
+  fill: none;
+  stroke: var(--neon);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.34;
+  stroke-dasharray: 260;
+  stroke-dashoffset: 0;
+}
+
+.neon-hot {
+  stroke: var(--ink);
+  opacity: 0.3;
+}
+
+.neon-dot {
+  fill: var(--neon);
+  opacity: 0.35;
+}
+
+.neon-scene.is-lit .neon-line,
+.neon-scene.is-lit .neon-hot {
+  animation: neon-draw 0.9s ease-out both;
+}
+
+.neon-scene.is-lit .neon-hot {
+  animation-delay: 0.36s;
+}
+
+.neon-scene.is-lit .neon-dot {
+  animation: neon-pop 0.32s 0.7s ease-out both;
+}
+
+.neon-scene:nth-child(2) svg { animation-delay: 0.08s; }
+.neon-scene:nth-child(3) svg { animation-delay: 0.16s; }
+.neon-scene:nth-child(4) svg { animation-delay: 0.24s; }
+.neon-scene:nth-child(5) svg { animation-delay: 0.32s; }
+.neon-scene:nth-child(6) svg { animation-delay: 0.4s; }
+
+.neon-scene figcaption {
+  margin-top: 6px;
+  min-height: 2.6em;
+  font-size: 9.5px;
+  line-height: 1.35;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  transition: color 0.2s ease;
+}
+
+.neon-scene:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--neon) 48%, transparent);
+  box-shadow: 0 0 28px -12px var(--neon);
+}
+
+.neon-scene:hover svg {
+  transform: scale(1.04);
+}
+
+.neon-scene:hover figcaption,
+.neon-scene--founder figcaption {
+  color: var(--neon);
+}
+
+@keyframes neon-draw {
+  0% {
+    stroke-dashoffset: 260;
+    opacity: 0.12;
+    filter: none;
+  }
+  68% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 0.58;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.94;
+    filter: drop-shadow(0 0 4px var(--neon)) drop-shadow(0 0 10px color-mix(in srgb, var(--neon) 55%, transparent));
+  }
+}
+
+@keyframes neon-pop {
+  0% { opacity: 0; transform: scale(0.45); transform-origin: center; }
+  75% { opacity: 1; transform: scale(1.25); }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px var(--neon));
+  }
 }
 
 /* Two columns of body copy on desktop; the measure stays readable. */
@@ -524,18 +628,184 @@ section {
   color: #c3cade;
 }
 
+.prose--closing {
+  margin-top: 36px;
+}
+
+/* The career's real turn: not ambition, but finally accepting ownership. */
+.founder-turn {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: clamp(32px, 5vw, 62px);
+  align-items: center;
+  margin: 48px 0 0;
+  padding: clamp(28px, 4.6vw, 52px);
+  border: 1px solid color-mix(in srgb, var(--lime) 24%, var(--line));
+  border-radius: 7px;
+  overflow: hidden;
+  background:
+    radial-gradient(80% 100% at 100% 32%, rgba(182, 255, 61, 0.08), transparent 64%),
+    radial-gradient(70% 90% at 0% 100%, rgba(34, 232, 255, 0.055), transparent 68%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.028), rgba(255, 255, 255, 0.008));
+}
+
+.founder-turn::before {
+  content: "";
+  position: absolute;
+  inset: -1px -1px auto;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), var(--lime), transparent);
+  opacity: 0.78;
+}
+
+.founder-turn__kicker {
+  margin: 0 0 13px;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+
+.founder-turn h3 {
+  max-width: 18ch;
+  margin-bottom: 20px;
+  font-size: clamp(22px, 3.2vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.founder-turn__copy > p:not(.founder-turn__kicker) {
+  font-size: 14.5px;
+  line-height: 1.68;
+  color: #abb4c7;
+}
+
+.founder-turn__close {
+  margin-top: 22px;
+  padding: 16px 0 0 17px;
+  border-top: 1px solid var(--line);
+  border-left: 2px solid var(--lime);
+  color: #d2d9e8 !important;
+}
+
+.founder-turn__visual {
+  margin: 0;
+  padding: 12px 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: rgba(5, 6, 10, 0.66);
+}
+
+.founder-turn__visual svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.founder-grid {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.045);
+  stroke-width: 1;
+}
+
+.founder-route,
+.founder-sign path {
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.3;
+}
+
+.founder-route {
+  stroke-dasharray: 720;
+  stroke-dashoffset: 0;
+}
+
+.founder-route--ghost {
+  stroke: var(--magenta);
+  stroke-dasharray: 7 8;
+  opacity: 0.2;
+}
+
+.founder-node {
+  fill: var(--cyan);
+  opacity: 0.3;
+}
+
+.founder-sign path {
+  stroke: var(--lime);
+}
+
+.founder-sign text,
+.founder-map__note {
+  fill: var(--lime);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  opacity: 0.3;
+}
+
+.founder-sign .founder-sign__status {
+  fill: var(--cyan);
+  font-size: 5.5px;
+  letter-spacing: 0.06em;
+}
+
+.founder-map__note {
+  fill: var(--faint);
+  font-size: 7px;
+}
+
+.founder-map__note--end {
+  fill: var(--lime);
+}
+
+.founder-turn__visual figcaption {
+  margin: 4px 8px 0;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--faint);
+}
+
+.founder-turn.is-lit .founder-route:not(.founder-route--ghost) {
+  animation: founder-route 1.8s 0.15s ease-out both;
+}
+
+.founder-turn.is-lit .founder-node {
+  animation: neon-pop 0.4s 1.3s ease-out both;
+}
+
+.founder-turn.is-lit .founder-sign path,
+.founder-turn.is-lit .founder-sign text,
+.founder-turn.is-lit .founder-map__note--end {
+  animation: founder-sign 0.8s 1.45s ease-out both;
+}
+
+@keyframes founder-route {
+  from { stroke-dashoffset: 720; opacity: 0.12; }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 0.96;
+    filter: drop-shadow(0 0 5px var(--cyan));
+  }
+}
+
+@keyframes founder-sign {
+  0%, 26%, 43% { opacity: 0.12; filter: none; }
+  18%, 34%, 62% { opacity: 1; filter: drop-shadow(0 0 8px var(--lime)); }
+  100% { opacity: 0.96; filter: drop-shadow(0 0 5px var(--lime)); }
+}
+
 @media (max-width: 760px) {
   .prose {
     columns: 1;
-  }
-  .arc span + span::before {
-    display: none;
-  }
-  .arc span + span {
-    margin-left: 0;
-  }
-  .arc {
-    gap: 8px;
   }
 }
 
@@ -1059,6 +1329,23 @@ footer {
   .grid--4 {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .neon-reel {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .neon-reel::before {
+    display: none;
+  }
+
+  .founder-turn {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-turn__visual {
+    width: min(100%, 580px);
+    margin-inline: auto;
+  }
 }
 
 @media (max-width: 620px) {
@@ -1090,6 +1377,33 @@ footer {
     grid-template-columns: 1fr;
     gap: 8px;
     padding: 22px 20px;
+  }
+
+  .neon-reel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin-bottom: 34px;
+  }
+
+  .neon-scene {
+    padding-inline: 8px;
+  }
+
+  .neon-scene figcaption {
+    min-height: auto;
+  }
+
+  .founder-turn {
+    margin-top: 38px;
+    padding: 24px 20px;
+  }
+
+  .founder-turn__copy > p:not(.founder-turn__kicker) {
+    font-size: 14px;
+  }
+
+  .founder-turn__visual {
+    padding: 5px 2px 9px;
   }
 
   .btn {

@@ -207,13 +207,72 @@
         <p class="eyebrow eyebrow--lime">How I got here</p>
         <h2>Two decades of shipping, mostly unglamorous.</h2>
 
-        <div class="arc" aria-hidden="true">
-          <span>Retail software</span>
-          <span>Infrastructure</span>
-          <span>Algorithms</span>
-          <span>Enterprise &amp; banking</span>
-          <span>Platforms</span>
-          <span>Founder</span>
+        <div class="neon-reel" aria-label="A neon timeline from retail software to company founder">
+          <figure class="neon-scene" data-neon style="--neon: var(--magenta)">
+            <svg viewBox="0 0 120 88" role="img" aria-labelledby="neon-rental-title">
+              <title id="neon-rental-title">A video cassette</title>
+              <rect class="neon-line" x="16" y="18" width="88" height="54" rx="5"/>
+              <circle class="neon-line" cx="42" cy="43" r="12"/>
+              <circle class="neon-line" cx="78" cy="43" r="12"/>
+              <circle class="neon-dot" cx="42" cy="43" r="3"/>
+              <circle class="neon-dot" cx="78" cy="43" r="3"/>
+              <path class="neon-line" d="M34 65h52l-8-10H42z"/>
+            </svg>
+            <figcaption>Retail software</figcaption>
+          </figure>
+
+          <figure class="neon-scene" data-neon style="--neon: var(--cyan)">
+            <svg viewBox="0 0 120 88" role="img" aria-labelledby="neon-network-title">
+              <title id="neon-network-title">A network router</title>
+              <rect class="neon-line" x="15" y="38" width="90" height="30" rx="4"/>
+              <path class="neon-line" d="M28 38V20m64 18V20M20 50h80"/>
+              <circle class="neon-dot" cx="30" cy="59" r="3"/>
+              <circle class="neon-dot" cx="43" cy="59" r="3"/>
+              <circle class="neon-dot" cx="56" cy="59" r="3"/>
+              <path class="neon-line" d="M44 28c10-10 22-10 32 0m-24 4c5-5 11-5 16 0"/>
+            </svg>
+            <figcaption>Infrastructure</figcaption>
+          </figure>
+
+          <figure class="neon-scene" data-neon style="--neon: var(--violet)">
+            <svg viewBox="0 0 120 88" role="img" aria-labelledby="neon-code-title">
+              <title id="neon-code-title">A coding trophy</title>
+              <path class="neon-line" d="M42 17h36v20c0 16-8 24-18 24s-18-8-18-24zM42 25H28v8c0 10 7 15 16 15m34-23h14v8c0 10-7 15-16 15M60 61v10m-16 0h32"/>
+              <path class="neon-hot" d="M54 31l-7 7 7 7m12-14 7 7-7 7"/>
+            </svg>
+            <figcaption>Algorithms</figcaption>
+          </figure>
+
+          <figure class="neon-scene" data-neon style="--neon: var(--lime)">
+            <svg viewBox="0 0 120 88" role="img" aria-labelledby="neon-ledger-title">
+              <title id="neon-ledger-title">An open financial ledger</title>
+              <path class="neon-line" d="M14 21h38c5 0 8 3 8 8v42c0-5-3-8-8-8H14zm92 0H68c-5 0-8 3-8 8v42c0-5 3-8 8-8h38z"/>
+              <path class="neon-hot" d="M25 34h18m-18 10h18m34-10h18m-18 10h18"/>
+            </svg>
+            <figcaption>Enterprise &amp; banking</figcaption>
+          </figure>
+
+          <figure class="neon-scene" data-neon style="--neon: var(--cyan)">
+            <svg viewBox="0 0 120 88" role="img" aria-labelledby="neon-global-title">
+              <title id="neon-global-title">A connected globe</title>
+              <circle class="neon-line" cx="60" cy="44" r="31"/>
+              <path class="neon-line" d="M29 44h62M60 13c-15 11-18 50 0 62m0-62c15 11 18 50 0 62M34 27c16 8 36 8 52 0M34 61c16-8 36-8 52 0"/>
+              <circle class="neon-dot" cx="43" cy="31" r="3"/>
+              <circle class="neon-dot" cx="76" cy="42" r="3"/>
+              <circle class="neon-dot" cx="53" cy="62" r="3"/>
+            </svg>
+            <figcaption>Global platforms</figcaption>
+          </figure>
+
+          <figure class="neon-scene neon-scene--founder" data-neon style="--neon: var(--lime)">
+            <svg viewBox="0 0 120 88" role="img" aria-labelledby="neon-founder-title">
+              <title id="neon-founder-title">A company door at the end of a winding route</title>
+              <path class="neon-line neon-route" d="M10 68c16 0 16-23 31-23s12 20 25 20c12 0 8-31 23-31h10"/>
+              <path class="neon-hot" d="M80 20h28v52H80zM87 28h14M87 36h14"/>
+              <circle class="neon-dot" cx="101" cy="57" r="2.5"/>
+            </svg>
+            <figcaption>Founder, eventually</figcaption>
+          </figure>
         </div>
 
         <div class="prose">
@@ -262,12 +321,65 @@
             same Monday. Different time zones, different regulators, no version of "works on
             my machine" that survives any of it.
           </p>
+        </div>
+
+        <aside class="founder-turn" data-neon aria-labelledby="founder-turn-title">
+          <div class="founder-turn__copy">
+            <p class="founder-turn__kicker">The detour that kept coming back</p>
+            <h3 id="founder-turn-title">The founder who did not want to be one.</h3>
+            <p>
+              I tried owning a business once. It failed, and taught me more about cash,
+              margin and the distance between a plan and month-end than any job had. For
+              years I treated that as a useful correction: I was a builder, an architect,
+              sometimes a leader — but not a company owner.
+            </p>
+            <p>
+              Whenever entrepreneurship returned, I found a sensible reason to refuse it.
+              The timing was wrong. The risk was unnecessary. I already had good work.
+              There was always a respectable argument for remaining where I was.
+            </p>
+            <p>
+              God was less interested in my categories. The work kept finding me, the
+              responsibility kept growing, and doors opened that did not fit inside an
+              employment contract. I resisted it for years, until the decision stopped being
+              about ambition and became a matter of obedience.
+            </p>
+            <p class="founder-turn__close">
+              Cabral Systems did not begin because I had always dreamed of becoming an
+              entrepreneur. It began when I finally stopped arguing with the direction God
+              had been giving me. I am still a builder first; now I am also responsible for
+              what gets built, whom it serves, and the company formed around it.
+            </p>
+          </div>
+
+          <figure class="founder-turn__visual">
+            <svg viewBox="0 0 420 300" role="img" aria-labelledby="founder-map-title founder-map-desc">
+              <title id="founder-map-title">A winding neon route to company ownership</title>
+              <desc id="founder-map-desc">A route labelled my plan repeatedly turns away before arriving at a lit Founder sign.</desc>
+              <path class="founder-grid" d="M20 65h380M20 125h380M20 185h380M20 245h380M85 25v250M165 25v250M245 25v250M325 25v250"/>
+              <path class="founder-route" d="M24 246C68 246 52 178 102 178c48 0 25 58 79 58 44 0 25-126 78-126 37 0 26 79 66 79 28 0 29-35 48-45"/>
+              <path class="founder-route founder-route--ghost" d="M24 246c48-10 52-65 24-92S21 81 83 66"/>
+              <circle class="founder-node" cx="24" cy="246" r="5"/>
+              <circle class="founder-node" cx="102" cy="178" r="5"/>
+              <circle class="founder-node" cx="181" cy="236" r="5"/>
+              <circle class="founder-node" cx="259" cy="110" r="5"/>
+              <circle class="founder-node" cx="325" cy="189" r="5"/>
+              <g class="founder-sign">
+                <path d="M286 38h112v98H286zM298 54h88v48h-88zM306 116h72"/>
+                <text x="342" y="75" text-anchor="middle">FOUNDER</text>
+                <text class="founder-sign__status" x="342" y="93" text-anchor="middle">STATUS: ACCEPTED</text>
+              </g>
+              <text class="founder-map__note" x="25" y="267">MY PLAN</text>
+              <text class="founder-map__note founder-map__note--end" x="282" y="27">THE ROAD BACK</text>
+            </svg>
+            <figcaption>Every sensible detour still led back to the same door.</figcaption>
+          </figure>
+        </aside>
+
+        <div class="prose prose--closing">
           <p>
-            I started a business of my own once and it failed. That taught me more about how
-            companies actually run — cash, margin, the distance between a plan and a
-            month-end — than any of the jobs did. I also spent a while teaching people to use
-            computers, which is where I learned that if you can't explain a system plainly,
-            you don't understand it.
+            I also spent a while teaching people to use computers, which is where I learned
+            that if you can't explain a system plainly, you don't understand it.
           </p>
           <p>
             None of that is the most important thing about me. I'm a husband, a father of
@@ -990,6 +1102,28 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
   <script src="assets/sketches.js"></script>
   <script>
     Sketches.mountAll();
+
+    /* The career illustrations light as they enter the page. They remain
+       fully visible without animation, and reduced-motion users skip the draw. */
+    (function () {
+      var signs = document.querySelectorAll('[data-neon]');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!('IntersectionObserver' in window) || reduceMotion) {
+        signs.forEach(function (sign) { sign.classList.add('is-lit'); });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-lit');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.28 });
+
+      signs.forEach(function (sign) { observer.observe(sign); });
+    })();
 
     /* Museum filmstrip: arrow buttons scroll by one exhibit, and the buttons
        disable at each end so they never look broken. */
