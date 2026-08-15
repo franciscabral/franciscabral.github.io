@@ -80,6 +80,7 @@
         <span>TypeScript · Go · Python · Kotlin</span>
         <span>Finance systems · Agent infrastructure</span>
         <span>Leads from the floor, still on the tools</span>
+        <span>Almere, Netherlands</span>
       </div>
     </div>
   </header>
@@ -215,50 +216,57 @@
 
         <div class="prose">
           <p>
-            I've been writing code for over twenty years. It started with retail software —
-            the system that ran a videotape rental store, back when that was a business.
-            Inventory, memberships, late fees, and a counter full of people who needed it to
-            work right now. The same shape of problem I work on today, with far worse tools.
+            I wrote my first line of code at fifteen. By sixteen it was running a business —
+            a video rental shop: inventory, memberships, late fees, and a queue of people at
+            the counter who needed it to work right now. Nobody told me that was unusual, so
+            I kept going.
           </p>
           <p>
-            I dropped out of college and won the university coding competitions anyway —
+            I never finished the bachelor's. I did finish a technician's diploma at SENAI,
+            and somewhere around dropping out I won the university coding competitions —
             both divisions, rookie and veteran, while still a rookie myself. Pascal and C,
-            algorithms written to be tested rather than admired. It's the closest thing I
-            have to a credential, and it's the one I'd point at.
+            algorithms written to be tested rather than admired. It's still the credential
+            I'd point at.
           </p>
           <p>
-            What followed was less romantic and more useful. Keeping networks and machines
-            alive. ERP posting routines, where a bug and a misstated ledger are the same
-            event. Technology rollouts across a retail bank's branches, where the deadline
-            is Monday morning and there is no version of done that excludes the branch in
-            the middle of nowhere.
+            What came after was less romantic and more useful. Networks and machines kept
+            alive in a college lab. ERP posting routines, where a bug and a misstated ledger
+            are the same event. Branch rollouts across a retail bank, where the deadline is
+            Monday morning and there is no version of done that skips the branch in the
+            middle of nowhere.
           </p>
           <p>
-            At the bank I automated my own job. Batch scripts walked the agency networks,
-            inventoried every device, and produced the spreadsheet procurement bought from.
-            Evidence gathered automatically, a purchase decided on deterministic data, a
-            person approving. Nobody called that an agent in 2010 — but it is exactly the
-            loop I build today.
+            At the bank I automated my own job. Batch walked the agency networks, inventoried
+            every device, and produced the spreadsheet procurement bought from. Evidence
+            gathered automatically, a decision made on deterministic data, a person approving.
+            Nobody called that an agent in 2010. It is the same loop I build today.
           </p>
           <p>
-            Somewhere in there I started a business of my own and it failed. That taught me
-            more about how companies actually run — cash, margin, the gap between a plan and
-            a month-end — than any of the jobs did. I also spent a while teaching people to
-            use computers, which is where I learned that if you can't explain a system
-            plainly, you don't really understand it.
+            Then mobile payments for taxis at the very start of that era. Systems for a state
+            department of education. Budget control for public highway projects. ERP for
+            chemicals, for lighting, for logistics. Eventually CTO, with a large technical
+            team. I've led people for years and never wanted the version of it where you stop
+            building — I lead from the floor, not from the top.
           </p>
           <p>
-            I've led teams for years — technical direction, planning deliveries, standing
-            between the developers and everyone who wants something from them. But I never
-            wanted the version of that where you stop building. I lead people from the
-            floor, not from the top.
+            I started a business of my own once and it failed. That taught me more about how
+            companies actually run — cash, margin, the distance between a plan and a
+            month-end — than any of the jobs did. I also spent a while teaching people to use
+            computers, which is where I learned that if you can't explain a system plainly,
+            you don't understand it.
           </p>
           <p>
-            So the route into finance systems didn't come from the finance side, and it
-            didn't come from a consultancy. It came from underneath: the networks, the
-            hardware, the integrations, the rollouts that had to hold. That's why I'm
-            willing to put agents near these systems now — and exactly why I'm careful
-            about which parts.
+            None of that is the most important thing about me. I'm a husband, a father of
+            three, and before any of it a servant of Jesus. I teach Old Testament study when
+            I'm not in a terminal. It shows up in the work more than you'd expect: I would
+            rather tell a client the true thing than the profitable thing, and I would rather
+            a system be trustworthy than clever.
+          </p>
+          <p>
+            So the route into finance systems didn't come from finance, and it didn't come
+            from a consultancy. It came from underneath — the networks, the hardware, the
+            integrations, the rollouts that had to hold. That's why I'm willing to put agents
+            near these systems now, and exactly why I'm careful about which parts.
           </p>
         </div>
       </div>
@@ -272,7 +280,7 @@
     <section id="museum">
       <div class="wrap">
         <p class="eyebrow eyebrow--violet">Time travel</p>
-        <h2>Ten screens, twenty-odd years.</h2>
+        <h2>Twelve screens, twenty-odd years.</h2>
         <p class="lede">
           The tools changed, the job mostly didn't: make the thing work, on time, for
           people who are waiting. Scroll sideways and watch the chrome catch up.
@@ -286,7 +294,6 @@
 
       <div class="strip-wrap">
         <div class="strip" id="strip" tabindex="0" role="region" aria-label="Career exhibits, scroll horizontally">
-
           <!-- 01 ------------------------------------------------------- -->
           <article class="exhibit" data-chrome="win9x">
             <div class="crt">
@@ -389,6 +396,36 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
             </div>
           </article>
 
+          <!-- 05 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="dos">
+            <div class="crt">
+              <div class="crt__bar crt__bar--dos"><span class="crt__title">C:\WINDOWS\system32\cmd.exe</span></div>
+              <pre class="crt__code"><code><span class="c">@echo off</span>
+<span class="k">for</span> /f <span class="s">"tokens=1,2"</span> %%a <span class="k">in</span> (agencias.txt) <span class="k">do</span> (
+  psexec \\%%a wmic computersystem get model <span class="k">&gt;&gt;</span> inv.csv
+  psexec \\%%a wmic os get version           <span class="k">&gt;&gt;</span> inv.csv
+)
+cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
+<span class="c">REM  nobody walked a branch with a clipboard again</span></code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 04 · circa 2008</p>
+              <h3>The first control plane</h3>
+              <p>
+                Rolling technology across a retail bank's branches. I automated my own job:
+                batch walked the agency networks, inventoried every device, and produced the
+                spreadsheet procurement bought from.
+              </p>
+              <p class="plaque__then">
+                Evidence gathered automatically, a purchase decided on deterministic data, a
+                human approving. That is the loop I build for agents now — this one was
+                written in <code>.bat</code>.
+              </p>
+              <ul class="plaque__tech"><li>Batch</li><li>VBScript</li><li>WMI</li><li>PsExec</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
           <!-- 04 ------------------------------------------------------- -->
           <article class="exhibit" data-chrome="ide">
             <div class="crt">
@@ -407,7 +444,7 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
 }</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 04 · circa 2008</p>
+              <p class="plaque__no">Exhibit 05 · 2009–13</p>
               <h3>ERP, from the inside</h3>
               <p>
                 Dynamics AX from 4.0 onward. Posting routines, vendor invoices, transaction
@@ -419,32 +456,31 @@ ipconfig /release <span class="k">&amp;</span> ipconfig /renew
             </div>
           </article>
 
-          <!-- 05 ------------------------------------------------------- -->
-          <article class="exhibit" data-chrome="dos">
+          <!-- 07 ------------------------------------------------------- -->
+          <article class="exhibit" data-chrome="ide">
             <div class="crt">
-              <div class="crt__bar crt__bar--dos"><span class="crt__title">C:\WINDOWS\system32\cmd.exe</span></div>
-              <pre class="crt__code"><code><span class="c">@echo off</span>
-<span class="k">for</span> /f <span class="s">"tokens=1,2"</span> %%a <span class="k">in</span> (agencias.txt) <span class="k">do</span> (
-  psexec \\%%a wmic computersystem get model <span class="k">&gt;&gt;</span> inv.csv
-  psexec \\%%a wmic os get version           <span class="k">&gt;&gt;</span> inv.csv
-)
-cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
-<span class="c">REM  nobody walked a branch with a clipboard again</span></code></pre>
+              <div class="crt__bar crt__bar--ide"><span class="crt__title">CrudService.cs — Visual Studio</span><i>_ □ ×</i></div>
+              <pre class="crt__code"><code><span class="k">public abstract class</span> <span class="f">CrudService</span>&lt;T&gt; : IService&lt;T&gt;
+    <span class="k">where</span> T : Entity
+{
+    <span class="c">// a new module should be a subclass, not a new project</span>
+    <span class="k">public virtual</span> Task&lt;T&gt; <span class="f">Save</span>(T e) =&gt; _uow.Repo&lt;T&gt;().Upsert(e);
+    <span class="k">public virtual</span> Task&lt;T&gt; <span class="f">Get</span>(Guid id) =&gt; _uow.Repo&lt;T&gt;().Find(id);
+}</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 05 · circa 2010</p>
-              <h3>The first control plane</h3>
+              <p class="plaque__no">Exhibit 06 · 2009–10, again in 2013</p>
+              <h3>A framework for the builders</h3>
               <p>
-                Rolling technology across a retail bank's branches. I automated my own job:
-                batch walked the agency networks, inventoried every device, and produced the
-                spreadsheet procurement bought from.
+                Dynamics AX implementations across industries, coaching the developers, and
+                building the thing they built features with. Conventions, scaffolding, and
+                the boring guarantees that let a team move without breaking each other.
               </p>
               <p class="plaque__then">
-                Evidence gathered automatically, a purchase decided on deterministic data, a
-                human approving. That is the loop I build for agents now — this one was
-                written in <code>.bat</code>.
+                Same instinct as the agent control planes and skill catalogues I write
+                today. The builders changed; making them faster and safer didn't.
               </p>
-              <ul class="plaque__tech"><li>Batch</li><li>VBScript</li><li>WMI</li><li>PsExec</li></ul>
+              <ul class="plaque__tech"><li>X++</li><li>Dynamics AX</li><li>C#</li><li>Framework design</li></ul>
               <p class="plaque__recon">reconstruction</p>
             </div>
           </article>
@@ -463,12 +499,12 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 }</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 06 · circa 2011</p>
+              <p class="plaque__no">Exhibit 07 · 2010–11</p>
               <h3>SMS to app</h3>
               <p>
-                Moving a live mobility operation off text messages and onto a mobile app, at
-                the very beginning of that era. Drivers, dispatch and billing all had to
-                keep working through the switch.
+                A public mobile payment system for taxi services, built at the very start of
+                that era — moving a live operation off text messages and onto an app.
+                Drivers, dispatch and billing all had to keep working through the switch.
               </p>
               <p class="plaque__then">
                 I have carried an operation across a platform shift before, with the meter
@@ -479,31 +515,33 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
             </div>
           </article>
 
-          <!-- 07 ------------------------------------------------------- -->
+          <!-- 07b · public sector -------------------------------------- -->
           <article class="exhibit" data-chrome="ide">
             <div class="crt">
-              <div class="crt__bar crt__bar--ide"><span class="crt__title">CrudService.cs — Visual Studio</span><i>_ □ ×</i></div>
-              <pre class="crt__code"><code><span class="k">public abstract class</span> <span class="f">CrudService</span>&lt;T&gt; : IService&lt;T&gt;
-    <span class="k">where</span> T : Entity
-{
-    <span class="c">// a new module should be a subclass, not a new project</span>
-    <span class="k">public virtual</span> Task&lt;T&gt; <span class="f">Save</span>(T e) =&gt; _uow.Repo&lt;T&gt;().Upsert(e);
-    <span class="k">public virtual</span> Task&lt;T&gt; <span class="f">Get</span>(Guid id) =&gt; _uow.Repo&lt;T&gt;().Find(id);
-}</code></pre>
+              <div class="crt__bar crt__bar--ide"><span class="crt__title">AlocacaoDocente.vb — Visual Studio</span><i>_ □ ×</i></div>
+              <pre class="crt__code"><code><span class="c">' professores por escola, por disciplina, por turno</span>
+<span class="k">Public Function</span> <span class="f">Alocar</span>(escola <span class="k">As</span> Escola) <span class="k">As</span> Resultado
+    <span class="k">For Each</span> turma <span class="k">In</span> escola.Turmas
+        <span class="k">If</span> turma.Professor <span class="k">Is Nothing</span> <span class="k">Then</span>
+            fila.Enfileirar(turma, Prioridade.Critica)
+        <span class="k">End If</span>
+    <span class="k">Next</span>
+    <span class="k">Return</span> fila.Resolver()
+<span class="k">End Function</span></code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 07 · circa 2014</p>
-              <h3>A framework for the builders</h3>
+              <p class="plaque__no">Exhibit 08 · 2011–13</p>
+              <h3>Public money, public consequences</h3>
               <p>
-                Not shipping features — shipping the thing the other developers built
-                features with. Conventions, scaffolding, and the boring guarantees that let
-                a team move without breaking each other.
+                Systems for a state department of education — teacher allocation, fund
+                management — and budget control for public highway projects. Software where
+                the people affected never chose to be users.
               </p>
               <p class="plaque__then">
-                Same instinct as the agent control planes and skill catalogues I write
-                today. The builders changed; making them faster and safer didn't.
+                Nothing sharpens your view of correctness like a system that decides which
+                classroom gets a teacher.
               </p>
-              <ul class="plaque__tech"><li>C#</li><li>.NET</li><li>Framework design</li></ul>
+              <ul class="plaque__tech"><li>VB.NET</li><li>C#</li><li>SQL Server</li></ul>
               <p class="plaque__recon">reconstruction</p>
             </div>
           </article>
@@ -522,13 +560,43 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 });</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 08 · circa 2016</p>
+              <p class="plaque__no">Exhibit 09 · 2016–20</p>
               <h3>Procurement meets the ledger</h3>
               <p>
                 A decade of integrations between what a company buys and what it books.
                 Tax, cost centres, payments, purchase orders — and month-end as the exam.
               </p>
               <ul class="plaque__tech"><li>SuiteScript</li><li>JavaScript</li><li>REST</li></ul>
+              <p class="plaque__recon">reconstruction</p>
+            </div>
+          </article>
+
+          <!-- 07c · CTO ------------------------------------------------- -->
+          <article class="exhibit" data-chrome="neon">
+            <div class="crt">
+              <div class="crt__bar crt__bar--neon"><span class="crt__title">standup.md</span><i>●&nbsp;●&nbsp;●</i></div>
+              <pre class="crt__code"><code><span class="c"># the only three questions that ever mattered</span>
+
+<span class="k">1.</span> What is blocked, and who is unblocking it?
+<span class="k">2.</span> What did we ship that a customer can see?
+<span class="k">3.</span> What are we pretending is fine?
+
+<span class="c"># I still take a ticket. That is not nostalgia —</span>
+<span class="c"># you cannot review what you cannot build.</span></code></pre>
+            </div>
+            <div class="plaque">
+              <p class="plaque__no">Exhibit 10 · 2017–19</p>
+              <h3>CTO</h3>
+              <p>
+                ERP implementations, product direction, and a large technical team. The job
+                where the deliverable stops being code and starts being other people's
+                ability to ship it.
+              </p>
+              <p class="plaque__then">
+                I never took the version of this that ends with you out of the editor. Lead
+                from the floor, not from the top.
+              </p>
+              <ul class="plaque__tech"><li>Leadership</li><li>NetSuite</li><li>Product</li></ul>
               <p class="plaque__recon">reconstruction</p>
             </div>
           </article>
@@ -544,7 +612,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
     <span class="k">return</span> []</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 09 · circa 2021</p>
+              <p class="plaque__no">Exhibit 11 · circa 2021</p>
               <h3>Documents, validated</h3>
               <p>
                 Extraction is the easy half. The work is deciding what to trust, what to
@@ -567,7 +635,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
 }</code></pre>
             </div>
             <div class="plaque">
-              <p class="plaque__no">Exhibit 10 · today</p>
+              <p class="plaque__no">Exhibit 12 · today</p>
               <h3>The mandate check</h3>
               <p>
                 Same job as the rental counter, harder stakes: decide what is allowed,
@@ -577,7 +645,6 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
               <p class="plaque__recon">not a reconstruction</p>
             </div>
           </article>
-
 
           <!-- 10b · testimonial ---------------------------------------- -->
           <article class="exhibit exhibit--quote">
@@ -600,6 +667,7 @@ cscript montar_planilha.vbs inv.csv <span class="k">&gt;</span> compras.xls
               <p class="plaque__recon">verbatim · name withheld</p>
             </div>
           </article>
+
         </div>
 
         <div class="strip-nav">
